@@ -1,6 +1,6 @@
 <?php
 
-//$num = 13;
+//$num = 12;
 
 $broster = fopen("BRoster.csv","r");
 
@@ -8,7 +8,7 @@ $broster = fopen("BRoster.csv","r");
 while(! feof($broster))
 	{
 	$player = fgetcsv($broster);
-	if ($player[0] == $num) {$bplayer = $player[1];}
+	if ($player[0] == $_POST["num"]) {$bplayer = $player[1];}
 	}
 
 fclose($broster);
