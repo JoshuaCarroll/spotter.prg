@@ -1,16 +1,25 @@
 <?php
 	if (!empty($_POST)) { // Checks to see if it received a form submission
-		$broster = fopen("BRoster.csv","r");
-		$num1 = substr_replace($_POST["num"],"",-1);
-			while(! feof($broster)) {
-				$player = fgetcsv($broster);
-				if ($player[0] == $num1) {
-					$bplayer = $player[1];
-				}
+		$jerseyNumber = substr_replace($_POST["num"],"",-1);
+		$lastCharacter = substr($_POST["num"], -1);
+		
+		if ($lastCharacter == "+") {
+			$roster = fopen("BRoster.csv","r");
+		} elseif ($lastCharacter == "-") {
+			$roster = fopen("BRoster.csv","r"); // What's the filename? You didn't upload it
+		}
+		
+		while(! feof($roster)) {
+			$row = fgetcsv($roster);
+			if ($row[0] == $jerseyNumber) {
+				$name = $row[1];
+				$position = $row[2];
 			}
-		fclose($broster);
+		}
+		
+		fclose($roster);
 
-		$names = $_POST["names"].$num1." " . $bplayer ;
+		$names = $_POST["names"] . $jerseyNumber . " " . $name;
 	}
 ?>
 
@@ -24,28 +33,16 @@
 					var char = e.value;
 					var lastChar = char[char.length -1];
 					var flg = "";
-					if (lastChar == "+") { // Lookup Bruins
+					if ((lastChar == "+") || (lastChar == "-")) { // Lookup Bruins
 						form1.submit();
 						return false;
-					} else if (lastChar == "-") { // Lookup other team 
-						form1.submit(); 
+					}
+					else if(keynum == 13) { //if enter key
+						document.getElementById("ourTeam").innerHTML = "";
+						document.getElementById("theirTeam").innerHTML = "";
 						return false;
 					}
-
-					if(lastChar && lastChar.which){ //(NN4)
-						lastChar = lastChar;
-						keynum = lastChar.which;
-					}
-					else{
-						lastChar = event;
-						keynum = lastChar.keyCode; //(IE)
-					}
-					if(keynum == 13){ //if enter key
-						document.getElementById("names").value = ""; //submit the form
-
-						return false;
-					}
-					else{
+					else {
 						return true;
 					}
 			}
@@ -53,10 +50,15 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="num" onkeyup="num_keypress(num)" autofocus size="1">
-			<textarea name="names" id="names" rows=10 cols=20>
-				<?= $names ?>
-			</textarea>
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keypress(num)" autofocus size="1">
+			<input type="hidden" name="ourTeam" value="<?= $ourTeam ?>">
+			<input type="hidden" name="theirTeam" value="<?= $theirTeam ?>">
+			<div id="ourTeam">
+				<?= $ourTeam ?>
+			</div>
+			<div id="theirTeam">
+				<?= $theirTeam ?>
+			</div>
     	</form>    
     </body>
 
