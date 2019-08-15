@@ -38,19 +38,25 @@
 			{
 					var char = e.value;
 					var lastChar = char[char.length -1];
-					if ((lastChar == "+") || (lastChar == "-")) { // Lookup Bruins
+
+					if ((lastChar == "+") || (lastChar == "-")) { // Lookup player
 						form1.submit();
 						return false;
 					}
-					else if(keynum == 13) { //if enter key
-						document.getElementById("ourTeam").innerHTML = "";
-						document.getElementById("theirTeam").innerHTML = "";
-						document.getElementById("hdnOurTeam").value = "";
-						document.getElementById("hdnTheirTeam").value = "";
-						return false;
+					if(lastChar && lastChar.which){ //if which property of event object is supported (NN4)
+						lastChar = lastChar;
+						keynum = lastChar.which; //character code is contained in NN4's which property
 					}
-					else {
-						return true;
+					else{
+						lastChar = event;
+						keynum = lastChar.keyCode; //character code is contained in IE's keyCode property
+					}
+					if(keynum == 13) { //if enter key
+					document.getElementById("ourTeam").innerHTML = "";
+					document.getElementById("theirTeam").innerHTML = "";
+					document.getElementById("hdnOurTeam").value = "";
+					document.getElementById("hdnTheirTeam").value = "";
+						return false;
 					}
 			}
 		</script>
@@ -66,7 +72,6 @@
 			<div id="theirTeam">
 				<?= $theirTeam ?>
 			</div>
-    	</form>    
-    </body>
+    	</form>       </body>
 
 </html>
