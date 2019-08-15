@@ -19,9 +19,11 @@
 		
 		fclose($roster);
 
-		
+		$ourTeam = $_POST["hdnOurTeam"];
+		$theirTeam = $_POST["hdnTheirTeam"];
 		$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span><span class='position'>" . $position . "</span></div>";
 		if ($lastCharacter == "+") {
+			
 			$ourTeam = $_POST["hdnOurTeam"] . $playerDiv;
 		} elseif ($lastCharacter == "-") {
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
