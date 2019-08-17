@@ -6,7 +6,7 @@
 		if ($lastCharacter == "+") {
 			$roster = fopen("BRoster.csv","r");
 		} elseif ($lastCharacter == "-") {
-			$roster = fopen("Maxpreps.csv","r"); // What's the filename? You didn't upload it
+			$roster = fopen("Maxpreps.csv","r"); 
 		}
 		
 		while(!feof($roster)) {
@@ -98,7 +98,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keypress(jerseyNumber)" autofocus size="1">
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="return num_keypress(jerseyNumber)" autofocus size="1">
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam">
