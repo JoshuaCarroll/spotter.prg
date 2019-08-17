@@ -1,0 +1,28 @@
+body {
+	background: #000000;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+#ourTeam {
+	
+}
+
+#ourTeam .player {
+	display: block;
+	width: 300px;
+	margin: 15px;
+}
+
+#ourTeam .player .jerseyNumber {
+	margin-right: 2px;
+}
+
+#ourTeam .player .name { 
+	margin-right: 2px;
+}
+
+#ourTeam .player .position { 
+	margin-right: 2px;
+}
