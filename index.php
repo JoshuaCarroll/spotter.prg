@@ -21,7 +21,7 @@
 
 		$ourTeam = $_POST["hdnOurTeam"];
 		$theirTeam = $_POST["hdnTheirTeam"];
-		$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span><span class='position'>" . $position . "</span></div>";
+		$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
 		if ($lastCharacter == "+") {
 			
 			$ourTeam = $_POST["hdnOurTeam"] . $playerDiv;
