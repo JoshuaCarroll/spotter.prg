@@ -3,7 +3,9 @@
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
 		
-		if ($lastCharacter == "+") {
+		if ($jerseyNumber == "54321") {
+			shell_exec('sudo halt');
+		} elseif ($lastCharacter == "+") {
 			$roster = fopen("BRoster.csv","r");
 		} elseif ($lastCharacter == "-") {
 			$roster = fopen("Maxpreps.csv","r"); 
@@ -66,7 +68,7 @@
 					else if (keynum == 36) { // $
 						openFullscreen();
 					}
-					else if (keynum == 40) { // $
+					else if (keynum == 40) { // (
 						closeFullscreen();
 					}
 			}
