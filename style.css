@@ -1,28 +1,53 @@
 body {
 	background: #000000;
-	color: #ffffff;
+	color: rgba(255,255,255,0.2);
 	font-family: Arial;
-	font-size: 12px;
+	font-size: 20px;
+	margin: 0;
+	padding 0;
+}
+
+input#jerseyNumber {
+	position: absolute;
+	top: 320px;
+	background-color: #222;
+	border-style: none;
+}
+#ourTeam:empty, #theirTeam:empty {
+   display: none;
+}
+
+#ourTeam:not(:empty):before {
+    content: 'Bruins';
+}
+
+#theirTeam:not(:empty):before {
+    content: 'Opponent';
+}
+
+#ourTeam, #theirTeam {
+	padding: 2%;
 }
 
 #ourTeam {
-	
+	background-color: #00002a;
 }
 
-#ourTeam .player {
-	display: block;
-	width: 300px;
-	margin: 15px;
+#theirTeam {
+	background-color: #453300;
+	text-align: right;
 }
 
-#ourTeam .player .jerseyNumber {
-	margin-right: 2px;
+.player .jerseyNumber {
+	font-size: 0.5em;
+	color: #888;
 }
 
-#ourTeam .player .name { 
-	margin-right: 2px;
+.player .name {
+	color: #fff;
 }
 
-#ourTeam .player .position { 
-	margin-right: 2px;
+.player .position {
+	font-size: 0.5em;
+	color: #888;
 }
