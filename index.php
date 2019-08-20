@@ -54,9 +54,11 @@
 				}
 				else if (key == 36) { // $
 					openFullscreen();
+					event.preventDefault();
 				}
 				else if (key == 40) { // (
 					closeFullscreen();
+					event.preventDefault();
 				}
 				else {
 					event.preventDefault();
@@ -79,6 +81,10 @@
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
-    	</form>       </body>
+    	</form>
+		<script type="text/javascript">
+			document.getElementById("jerseyNumber").focus();
+		</script>
+	</body>
 
 </html>
