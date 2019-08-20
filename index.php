@@ -39,68 +39,42 @@
         <title>Football Spotter Program</title>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			function num_keypress(e)
-			{
-					var char = e.value;
-					var lastChar = char[char.length -1];
-
-					if ((lastChar == "+") || (lastChar == "-")) { // Lookup player
-						form1.submit();
-						return false;
-					}
-					
-					if (lastChar && lastChar.which){ //if which property of event object is supported (NN4)
-						lastChar = lastChar;
-						keynum = lastChar.which; //character code is contained in NN4's which property
-					}
-					else {
-						lastChar = event;
-						keynum = lastChar.keyCode; //character code is contained in IE's keyCode property
-					}
-				
-					if (keynum == 13) { //if enter key
-						document.getElementById("ourTeam").innerHTML = "";
-						document.getElementById("theirTeam").innerHTML = "";
-						document.getElementById("hdnOurTeam").value = "";
-						document.getElementById("hdnTheirTeam").value = "";
-						return false;
-					}
-					else if (keynum == 36) { // $
-						openFullscreen();
-					}
-					else if (keynum == 40) { // (
-						closeFullscreen();
-					}
+			function num_keypress(event) {
+				var key = event.keyCode;
+				console.log(key);
+				if ((48 <= key) && (key <= 57)){}
+				else if ((key == 43) || (key == 45)) {
+					form1.submit();
+				}
+				else if (key == 13) {
+					document.getElementById("ourTeam").innerHTML = "";
+					document.getElementById("theirTeam").innerHTML = "";
+					document.getElementById("hdnOurTeam").value = "";
+					document.getElementById("hdnTheirTeam").value = "";
+				}
+				else if (key == 36) { // $
+					openFullscreen();
+				}
+				else if (key == 40) { // (
+					closeFullscreen();
+				}
+				else {
+					event.preventDefault();
+				}
 			}
 			
 			function openFullscreen() {
-			  if (elem.requestFullscreen) {
-				elem.requestFullscreen();
-			  } else if (elem.mozRequestFullScreen) { /* Firefox */
-				elem.mozRequestFullScreen();
-			  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-				elem.webkitRequestFullscreen();
-			  } else if (elem.msRequestFullscreen) { /* IE/Edge */
-				elem.msRequestFullscreen();
-			  }
+			  document.documentElement.webkitRequestFullscreen();
 			}
 
 			function closeFullscreen() {
-			  if (document.exitFullscreen) {
-				document.exitFullscreen();
-			  } else if (document.mozCancelFullScreen) { /* Firefox */
-				document.mozCancelFullScreen();
-			  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-				document.webkitExitFullscreen();
-			  } else if (document.msExitFullscreen) { /* IE/Edge */
-				document.msExitFullscreen();
-			  }
+			  document.webkitCancelFullScreen();
 			}
 		</script>
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="return num_keypress(jerseyNumber)" autofocus size="1">
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="return num_keypress(event);">
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
