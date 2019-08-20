@@ -103,12 +103,8 @@
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="return num_keypress(jerseyNumber)" autofocus size="1">
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
-			<div id="ourTeam">
-				<?= $ourTeam ?>
-			</div>
-			<div id="theirTeam">
-				<?= $theirTeam ?>
-			</div>
+			<div id="ourTeam"><?= $ourTeam ?></div>
+			<div id="theirTeam"><?= $theirTeam ?></div>
     	</form>       </body>
 
 </html>
