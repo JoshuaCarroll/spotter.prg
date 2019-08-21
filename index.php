@@ -61,7 +61,7 @@
 				}
 				else if (key == 40) { // ( 
 				    
-                    document.body.cancelFullscreen(); //closeFullscreen not correct per google
+                    closeFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
 				else {
@@ -73,9 +73,9 @@
 			  document.body.requestFullscreen();
 			}
 
-//			function closeFullscreen() {
-//			  document.webkitCancelFullScreen();
-//			}
+			function closeFullscreen() {
+			  document.cancelFullScreen();
+			}
 		</script>
     </head>
     <body>
