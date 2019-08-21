@@ -56,21 +56,21 @@
                 }
 				else if (key == 36) { // $
 				    alert(key);
-                    document.body.requestFullscreen(); // 
+                    openFullscreen(); // 
 					event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
 //					event.preventDefault();
-				}
+//				}
 				else {
 					event.preventDefault();
 				}
 			}
 			
-//			function openFullscreen() {
-//			  document.body.requestFullscreen();
-//			}
+			function openFullscreen() {
+			  document.body.requestFullscreen();
+			}
 
 //			function closeFullscreen() {
 //			  ocument.cancelFullScreen();
@@ -79,7 +79,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="return num_keypress(event)"> <!-- return num_keypress(event);-->
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="return num_keypress(event)">
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
