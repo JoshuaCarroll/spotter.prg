@@ -45,6 +45,7 @@
 				if ((52 <= key) && (key <= 57)){} // 48 not $ 57 = (
 				else if ((key == 109) || (key == 107)) { // 43 = execute 45 = insert
 					form1.submit();
+                    return false;
 				}
 				else if (key == 13) {
 					document.getElementById("ourTeam").innerHTML = "";
