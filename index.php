@@ -42,10 +42,10 @@
 		<script type="text/javascript">
 			function num_keypress(event) {
 				var key = event.keyCode;
-                //alert(key);
+                alert(key);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
-					alert(+-);
+					
                     form1.submit();
                     return false;
 				}
