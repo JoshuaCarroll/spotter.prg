@@ -64,7 +64,8 @@
 //					event.preventDefault();
 //				}
 				else {
-					//event.preventDefault();
+					return false;
+                    //event.preventDefault();
 				}
 			}
 			
