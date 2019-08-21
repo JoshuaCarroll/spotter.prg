@@ -50,6 +50,7 @@
                     alert("form Submitted")
 				}
 				else if (key == 13) { //13 = CR
+                    alert("Point 2");
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
