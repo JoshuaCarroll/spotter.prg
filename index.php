@@ -42,7 +42,7 @@
 			function num_keypress(event) {
 				var key = event.keyCode;
 				
-                alert(key);
+                
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
 					form1.submit();
@@ -52,7 +52,8 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-				}
+				    return false;
+                }
 				else if (key == 36) { // $
 					alert("$")
                     element.requestFullscreen(); //openFullscreen not right per google
