@@ -43,13 +43,15 @@
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
 			function num_keypress(event) {
-				var key = event.keyCode;
+				var char = event.value;
+                var lastChar = char[char.length -1];
+                var key = lastChar.keyCode;
                 //alert(key);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
 					
                     form1.submit();
-                    alert("form Submitted")
+                    //alert("form Submitted")
 				}
 				else if (key == 13) { //13 = CR
                     //alert("Point 2");
@@ -86,7 +88,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="return num_keypress(event);" ><!-- -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="jerseyNumber" ><!-- -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
