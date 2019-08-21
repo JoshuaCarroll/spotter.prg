@@ -43,11 +43,11 @@
 				var key = event.keyCode;
 				
                 alert(key);
-				if ((40 <= key) && (key <= 36)){} // 48 not $ 57 = (
-				else if ((key == 43) || (key == 45)) { // 43 = + 45 = -
+				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
+				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
 					form1.submit();
 				}
-				else if (key == 13) {
+				else if (key == 13) { //13 = CR
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
