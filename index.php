@@ -42,8 +42,8 @@
 			function num_keypress(event) {
 				var key = event.keyCode;
 				console.log(key);
-				if ((48 <= key) && (key <= 57)){}
-				else if ((key == 43) || (key == 45)) {
+				if ((52 <= key) && (key <= 57)){} // 48 not $ 57 = (
+				else if ((key == 109) || (key == 107)) { // 43 = execute 45 = insert
 					form1.submit();
 				}
 				else if (key == 13) {
@@ -52,11 +52,11 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
 				}
-				else if (key == 36) { // $
+				else if (key == 52) { // $
 					openFullscreen();
 					event.preventDefault();
 				}
-				else if (key == 40) { // (
+				else if (key == 57) { // ( not 40
 					closeFullscreen();
 					event.preventDefault();
 				}
