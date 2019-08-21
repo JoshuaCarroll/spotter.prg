@@ -46,6 +46,7 @@
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
 					form1.submit();
+                    return;
 				}
 				else if (key == 13) { //13 = CR
 					document.getElementById("ourTeam").innerHTML = "";
