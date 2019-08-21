@@ -45,7 +45,8 @@
                 //alert(key);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
-					form1.submit();
+					alert(+-);
+                    form1.submit();
                     return false;
 				}
 				else if (key == 13) { //13 = CR
