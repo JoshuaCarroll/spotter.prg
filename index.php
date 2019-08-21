@@ -43,8 +43,8 @@
 				var key = event.keyCode;
 				
                 alert(key);
-				if ((52 <= key) && (key <= 57)){} // 48 not $ 57 = (
-				else if ((key == 109) || (key == 107)) { // 43 = execute 45 = insert
+				if ((40 <= key) && (key <= 36)){} // 48 not $ 57 = (
+				else if ((key == 43) || (key == 45)) { // 43 = + 45 = -
 					form1.submit();
 				}
 				else if (key == 13) {
@@ -53,12 +53,12 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
 				}
-				else if (key == 52) { // $
+				else if (key == 36) { // $
 					alert("$")
                     element.requestFullscreen(); //openFullscreen not right per google
 					event.preventDefault();
 				}
-				else if (key == 57) { // ( not 40
+				else if (key == 40) { // ( 
 					element.exitFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
