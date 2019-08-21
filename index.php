@@ -55,12 +55,13 @@
 				    return false;
                 }
 				else if (key == 36) { // $
-					alert("$")
+				
                     document.body.requestFullscreen(); //openFullscreen not right per google
 					event.preventDefault();
 				}
 				else if (key == 40) { // ( 
-					document.body.exitFullscreen(); //closeFullscreen not correct per google
+				    alert (key);
+                    document.body.exitFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
 				else {
