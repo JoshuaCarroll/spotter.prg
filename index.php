@@ -45,7 +45,7 @@
 			function num_keypress(event) {
 				var char = event.value;
                 var lastChar = char[char.length -1];
-                var key = .keyCode;
+                var key = lastChar.keyCode;
                 alert(char);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
