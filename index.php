@@ -60,7 +60,7 @@
 					event.preventDefault();
 				}
 				else if (key == 40) { // ( 
-				    
+				    alert(key);
                     document.body.cancelFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
@@ -69,13 +69,13 @@
 				}
 			}
 			
-			function openFullscreen() {
-			  document.documentElement.webkitRequestFullscreen();
-			}
+//			function openFullscreen() {
+//			  document.documentElement.webkitRequestFullscreen();
+//			}
 
-			function closeFullscreen() {
-			  document.webkitCancelFullScreen();
-			}
+//			function closeFullscreen() {
+//			  document.webkitCancelFullScreen();
+//			}
 		</script>
     </head>
     <body>
