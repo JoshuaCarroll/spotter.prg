@@ -61,7 +61,7 @@
 				}
 				else if (key == 40) { // ( 
 				    
-                    document.body.exitFullscreen(); //closeFullscreen not correct per google
+                    document.body.cancelFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
 				else {
