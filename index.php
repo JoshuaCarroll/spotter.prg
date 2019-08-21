@@ -41,7 +41,8 @@
 		<script type="text/javascript">
 			function num_keypress(event) {
 				var key = event.keyCode;
-				console.log(key);
+				
+                alert(key);
 				if ((52 <= key) && (key <= 57)){} // 48 not $ 57 = (
 				else if ((key == 109) || (key == 107)) { // 43 = execute 45 = insert
 					form1.submit();
