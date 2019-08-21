@@ -78,7 +78,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeydown="return num_keypress(event);" autofocus><!-- -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeydown="return num_keypress(event)" autofocus><!-- -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
