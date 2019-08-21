@@ -53,11 +53,11 @@
 					document.getElementById("hdnTheirTeam").value = "";
 				}
 				else if (key == 52) { // $
-					openFullscreen();
+					element.requestFullscreen(); //openFullscreen not right per google
 					event.preventDefault();
 				}
 				else if (key == 57) { // ( not 40
-					closeFullscreen();
+					element.exitFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
 				else {
