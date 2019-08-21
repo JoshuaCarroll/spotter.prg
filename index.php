@@ -46,15 +46,15 @@
 				var char = event.value;
                 var lastChar = char[char.length -1];
                 var key = lastChar.keyCode;
-                alert(key);
+                alert(lastChar);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
-				if ((key == 107) || (key == 109)) { // 43 = + 45 = -
+				if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
 					
                     form1.submit();
                     //alert("form Submitted")
 				}
 				else if (key == 13) { //13 = CR
-                    //alert("Point 2");
+                    alert("Point 2");
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
