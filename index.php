@@ -55,7 +55,7 @@
 				    return false;
                 }
 				else if (key == 36) { // $
-				    
+				    alert(key);
                     document.body.requestFullscreen(); // 
 					event.preventDefault();
 				}
