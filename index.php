@@ -60,7 +60,7 @@
 					event.preventDefault();
 				}
 				else if (key == 40) { // ( 
-				    alert (key);
+				    
                     document.body.exitFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
