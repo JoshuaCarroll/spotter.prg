@@ -59,10 +59,10 @@
                     openFullscreen(); // 
 					event.preventDefault();
 				}
-				else if (key == 40) { // ( 
+//				else if (key == 40) { // ( 
 				    
-                    closeFullscreen(); //closeFullscreen not correct per google
-					event.preventDefault();
+//                    closeFullscreen(); //closeFullscreen not needed esc works
+//					event.preventDefault();
 				}
 				else {
 					event.preventDefault();
@@ -73,9 +73,9 @@
 			  document.body.requestFullscreen();
 			}
 
-			function closeFullscreen() {
-			  document.cancelFullScreen();
-			}
+//			function closeFullscreen() {
+//			  document.cancelFullScreen();
+//			}
 		</script>
     </head>
     <body>
