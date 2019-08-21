@@ -67,6 +67,7 @@
 //					event.preventDefault();
 //				}
 				else {
+                    alert("The End")
 					return true;
                     //event.preventDefault();
 				}
