@@ -3,9 +3,9 @@
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
 		
-		if ($jerseyNumber == "54321") {
+/*		if ($jerseyNumber == "54321") {
 			shell_exec('sudo halt');
-		} elseif ($lastCharacter == "+") {
+		} else*/if ($lastCharacter == "+") {
 			$roster = fopen("BRoster.csv","r");
 		} elseif ($lastCharacter == "-") {
 			$roster = fopen("Maxpreps.csv","r"); 
