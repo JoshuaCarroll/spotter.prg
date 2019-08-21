@@ -48,7 +48,7 @@
                 var key = lastChar.keyCode;
                 //alert(key);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
-				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
+				if ((key == 107) || (key == 109)) { // 43 = + 45 = -
 					
                     form1.submit();
                     //alert("form Submitted")
@@ -61,7 +61,7 @@
 					document.getElementById("hdnTheirTeam").value = "";
 				    return false;
                 }
-				else if (key == 36) { // $
+				else if (key == 52) { // $ was 36
                     openFullscreen(); // 
 					return false;
                     //event.preventDefault();
