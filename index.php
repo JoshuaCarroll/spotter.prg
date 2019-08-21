@@ -42,7 +42,7 @@
 		<script type="text/javascript">
 			function num_keypress(event) {
 				var key = event.keyCode;
-                alert(key);
+                //alert(key);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
 					form1.submit();
@@ -78,15 +78,15 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="return num_keypress(event)" autofocus><!-- -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="return num_keypress(event)" ><!-- -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
     	</form>
-<!--		<script type="text/javascript">
+		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
-		</script>-->
+		</script>
 	</body>
 
 </html>
