@@ -56,7 +56,7 @@
                 }
 				else if (key == 36) { // $
 					alert("$")
-                    element.requestFullscreen(); //openFullscreen not right per google
+                    document.body.requestFullscreen(); //openFullscreen not right per google
 					event.preventDefault();
 				}
 				else if (key == 40) { // ( 
