@@ -53,7 +53,8 @@
 					document.getElementById("hdnTheirTeam").value = "";
 				}
 				else if (key == 52) { // $
-					element.requestFullscreen(); //openFullscreen not right per google
+					alert("$")
+                    element.requestFullscreen(); //openFullscreen not right per google
 					event.preventDefault();
 				}
 				else if (key == 57) { // ( not 40
