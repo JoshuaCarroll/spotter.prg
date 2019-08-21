@@ -46,7 +46,7 @@
 				var char = event.value;
                 var lastChar = char[char.length -1];
                 var key = lastChar.keyCode;
-                alert(lastChar);
+                //alert(lastChar);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
 					
@@ -54,16 +54,16 @@
                     //alert("form Submitted")
 				}
 				else if (key == 13) { //13 = CR
-                    alert("Point 2");
+                    //alert("Point 2");
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-				    return false;
+				    
                 }
 				else if (lastChar == "$") { // $ was 36
                     openFullscreen(); // 
-					return false;
+					//return false;
                     //event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
