@@ -46,7 +46,7 @@
 				var char = event.value;
                 var lastChar = char[char.length -1];
                 var key = lastChar.keyCode;
-                //alert(key);
+                alert(key);
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 107) || (key == 109)) { // 43 = + 45 = -
 					
