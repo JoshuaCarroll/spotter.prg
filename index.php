@@ -55,12 +55,11 @@
 				    return false;
                 }
 				else if (key == 36) { // $
-				
-                    openFullscreen(); // 
+				    
+                    document.body.requestFullscreen(); // 
 					event.preventDefault();
 				}
-//				else if (key == 40) { // ( 
-				    
+//				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
 //					event.preventDefault();
 				}
@@ -69,12 +68,12 @@
 				}
 			}
 			
-			function openFullscreen() {
-			  document.body.requestFullscreen();
-			}
+//			function openFullscreen() {
+//			  document.body.requestFullscreen();
+//			}
 
 //			function closeFullscreen() {
-//			  document.cancelFullScreen();
+//			  ocument.cancelFullScreen();
 //			}
 		</script>
     </head>
