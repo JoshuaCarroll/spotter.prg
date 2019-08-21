@@ -46,25 +46,26 @@
 				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
 				if ((key == 43) || (key == 45)) { // 43 = + 45 = -
 					form1.submit();
-                    
+                    return false;
 				}
 				else if (key == 13) { //13 = CR
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-				    
+				    return false;
                 }
 				else if (key == 36) { // $
                     openFullscreen(); // 
-					//event.preventDefault();
+					return false;
+                    //event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
 //					event.preventDefault();
 //				}
 				else {
-					return false;
+					return true;
                     //event.preventDefault();
 				}
 			}
