@@ -56,11 +56,11 @@
                 }
 				else if (key == 36) { // $
 				
-                    document.body.requestFullscreen(); //openFullscreen not right per google
+                    openFullscreen(); // 
 					event.preventDefault();
 				}
 				else if (key == 40) { // ( 
-				    alert(key);
+				    
                     document.body.cancelFullscreen(); //closeFullscreen not correct per google
 					event.preventDefault();
 				}
@@ -69,9 +69,9 @@
 				}
 			}
 			
-//			function openFullscreen() {
-//			  document.documentElement.webkitRequestFullscreen();
-//			}
+			function openFullscreen() {
+			  document.body.requestFullscreen();
+			}
 
 //			function closeFullscreen() {
 //			  document.webkitCancelFullScreen();
