@@ -61,7 +61,7 @@
 					document.getElementById("hdnTheirTeam").value = "";
 				    return false;
                 }
-				else if (key == 52) { // $ was 36
+				else if (lastChar == "$") { // $ was 36
                     openFullscreen(); // 
 					return false;
                     //event.preventDefault();
