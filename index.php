@@ -2,7 +2,9 @@
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
-		
+		echo '<script language="javascript">';
+        echo 'alert($jerseyNumber)';
+        echo '</script>';
 /*		if ($jerseyNumber == "54321") {
 			shell_exec('sudo halt');
 		} else*/
@@ -50,7 +52,7 @@
                     alert("form Submitted")
 				}
 				else if (key == 13) { //13 = CR
-                    alert("Point 2");
+                    //alert("Point 2");
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
@@ -67,7 +69,7 @@
 //					event.preventDefault();
 //				}
 				else {
-                    alert("The End")
+                    //alert("The End")
 					return true;
                     //event.preventDefault();
 				}
