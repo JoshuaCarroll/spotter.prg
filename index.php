@@ -57,7 +57,7 @@
                 }
 				else if (key == 36) { // $
                     openFullscreen(); // 
-					event.preventDefault();
+					//event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
