@@ -39,12 +39,19 @@
         <title>Football Spotter Program</title>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			function num_keypress() {
-				
-                var char = document.getElementById('jerseyNumber').value;
-
-                var lastChar = char[char.length -1];
-//                var key;
+			function num_keypress(event) {
+                var char = "";
+                var lastChar = "";
+                if (event.keyCode == 13) { //13 = CR
+					document.getElementById("ourTeam").innerHTML = "";
+					document.getElementById("theirTeam").innerHTML = "";
+					document.getElementById("hdnOurTeam").value = "";
+					document.getElementById("hdnTheirTeam").value = "";
+                    event.preventDefault()
+                    }
+                else {
+                    char = document.getElementById('jerseyNumber').value;
+                    lastChar = char[char.length -1];}
 //                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
 //					key = lastChar.which; //character code is contained in NN4's which property
 //				}
@@ -58,13 +65,7 @@
                     form1.submit();
                     event.preventDefault();    
 				    }
-//				else if (e == "Enter") { //13 = CR
-                    
-//					document.getElementById("ourTeam").innerHTML = "";
-//					document.getElementById("theirTeam").innerHTML = "";
-//					document.getElementById("hdnOurTeam").value = "";
-//					document.getElementById("hdnTheirTeam").value = "";
-  //              }
+//				
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
@@ -76,8 +77,9 @@
 //				}
 				else {
                     event.preventDefault();
-				}
-			}
+				
+                }
+            }
 			
 //			function openFullscreen() {
 //			  document.body.requestFullscreen();
