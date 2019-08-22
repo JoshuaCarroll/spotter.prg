@@ -51,8 +51,8 @@
 //				else{
 //					key = lastChar.keyCode; //character code is contained in IE's keyCode property
 //				}
-                    //var key = event.keyCode;
-//                    alert(key);
+                    var key = event.keyCode;
+                    alert(key);
                     //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
