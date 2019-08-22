@@ -42,8 +42,8 @@
 			function num_keypress(event) {
 				alert(event.charCode);
                 var e = event.charCode;
-                return;
-                var char = event.value;
+                
+ /*               var char = event.value;
                 var lastChar = char[char.length -1];
 //                var key;
 //                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
@@ -80,7 +80,7 @@
 			}
 			
 			function openFullscreen() {
-			  document.body.requestFullscreen();
+*/			  document.body.requestFullscreen();
 			}
 
 //			function closeFullscreen() {
