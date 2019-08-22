@@ -67,7 +67,7 @@
 				else if (lastChar == "$") { // $ was 36
                     openFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
-                    event.preventDefault();
+                    
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
