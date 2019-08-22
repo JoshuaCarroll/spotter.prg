@@ -62,18 +62,16 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                 }
-				else if (lastChar == "$") { // $ was 36
-                    openFullscreen(); // 
+//				else if (lastChar == "$") { // $ was 36
+//                    openFullscreen(); // 
 					//return false;
-                    event.preventDefault();
-				}
+//                    event.preventDefault();
+//				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
 //					event.preventDefault();
 //				}
 				else {
-                    //alert("The End")
-					return true;
                     event.preventDefault();
 				}
 			}
