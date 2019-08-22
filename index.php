@@ -42,9 +42,9 @@
 			function num_keypress() {
 				
                 var num = document.getElementById('jerseyNumber').value;
-                if (!num.metaKey) {num.preventDefault();}
-                var lastChar = num[num.length -1];
-                alert(lastChar);
+                num.preventDefault();
+                //var lastChar = num[num.length -1];
+                alert(num);
                 //var e = event.charCode;
                 
  /*               var char = event.value;
