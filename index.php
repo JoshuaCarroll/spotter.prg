@@ -42,19 +42,20 @@
 			function num_keypress(event) {
 				var char = event.value;
                 var lastChar = char[char.length -1];
-                if(lastChar && lastChar.which){ //if which property of event object is supported (NN4)
+                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
 					key = lastChar.which; //character code is contained in NN4's which property
 				}
 				else{
 					key = lastChar.keyCode; //character code is contained in IE's keyCode property
 				}
                     //var key = event.keyCode;
-                    //alert(key);
+                    /alert(key);
                     //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
 					
                     form1.submit();
                     //alert("form Submitted")
+                    return false;    
 				}
 				else if (key == 13) { //13 = CR
                     alert("CR");
@@ -62,7 +63,7 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-				    
+				    return false;
                 }
 				else if (lastChar == "$") { // $ was 36
                     openFullscreen(); // 
