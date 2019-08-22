@@ -40,21 +40,21 @@
         <meta charset="UTF-8">
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			document.getElementById('jerseyNumber').addEventListenerfunction(onkeydown , function(e)) {
+			document.getElementById('jerseyNumber').addEventListener('onkeydown' , function(e) {
                 
                 var char = "";
                 var lastChar = "";
                 //alert(e);
                 var keycode = e.keyCode;
                 alert(keycode);
-                }
+                });
                 //if (e.keyCode == 13 || e.which == 13) { //13 = CR
 					//alert("You hit ENTER");
                     //document.getElementById("ourTeam").innerHTML = "";
 					//document.getElementById("theirTeam").innerHTML = "";
 					//document.getElementById("hdnOurTeam").value = "";
 					//document.getElementById("hdnTheirTeam").value = "";
-                    event.preventDefault()
+                    //event.preventDefault()
                     //}
                 //else {
                     char = document.getElementById('jerseyNumber').value;
