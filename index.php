@@ -58,8 +58,8 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-                    event.preventDefault();
-                    stop;
+                    event.stopPropagation();
+                    
                 }
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
