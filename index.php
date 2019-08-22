@@ -66,10 +66,7 @@
   //              }
 				else if (lastChar == "$") { // $ was 36
                     openFullscreen(); // 
-					document.getElementById("ourTeam").innerHTML = "";
-					document.getElementById("theirTeam").innerHTML = "";
-					document.getElementById("hdnOurTeam").value = "";
-					document.getElementById("hdnTheirTeam").value = "";
+					document.getElementById('jerseyNumber').value = "";
                     event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
