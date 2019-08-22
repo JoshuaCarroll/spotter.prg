@@ -44,20 +44,14 @@
 				
                 var char = document.getElementById('jerseyNumber').value;
                 var lastChar = char[char.length -1];
-//                var key;
-//                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
-//					key = lastChar.which; //character code is contained in NN4's which property
-//				}
-//				else{
-//					key = lastChar.keyCode; //character code is contained in IE's keyCode property
-//				}
-                    var key = event.keyCode;
-                    alert(key);
-                    //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
-                    if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
+                var key = event.keyCode;
+                alert(key);
+                //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
+                if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
-                    event.preventDefault();    
-				    }
+                    event.preventDefault();
+                    stop;
+				}
 //				else if (e == "Enter") { //13 = CR
                     
 //					document.getElementById("ourTeam").innerHTML = "";
