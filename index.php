@@ -59,7 +59,7 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     stop;
-  //              }
+                }
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
