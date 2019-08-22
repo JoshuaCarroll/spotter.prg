@@ -40,7 +40,7 @@
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
 			function num_keypress(event) {
-				alert(event.returnValue);
+				alert(event.charCode);
                 //var e = event.charCode;
                 
  /*               var char = event.value;
