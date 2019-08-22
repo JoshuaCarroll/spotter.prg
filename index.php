@@ -43,9 +43,9 @@
                 
                 var char = "";
                 var lastChar = "";
-                alert(e);
-                var keycode = e.keyCode;
-                alert(keycode);
+                //alert(e);
+                //var keycode = e.keyCode;
+                //alert(keycode);
                 var keywhich = e.which;
                 alert(keywhoch);
                 stop;
