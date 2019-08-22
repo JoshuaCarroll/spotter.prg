@@ -66,7 +66,10 @@
   //              }
 				else if (lastChar == "$") { // $ was 36
                     openFullscreen(); // 
-					//return false;
+					document.getElementById("ourTeam").innerHTML = "";
+					document.getElementById("theirTeam").innerHTML = "";
+					document.getElementById("hdnOurTeam").value = "";
+					document.getElementById("hdnTheirTeam").value = "";
                     event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
