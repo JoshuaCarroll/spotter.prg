@@ -40,7 +40,8 @@
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
 			function num_keypress(event) {
-				alert(event.key);
+				var e = event.key;
+                alert(e);
                 var char = event.value;
                 var lastChar = char[char.length -1];
 //                var key;
@@ -56,7 +57,7 @@
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
 				}
-				else if (event.key == "Enter") { //13 = CR
+				else if (e == "Enter") { //13 = CR
                     
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
