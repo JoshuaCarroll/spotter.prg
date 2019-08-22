@@ -41,12 +41,8 @@
 		<script type="text/javascript">
 			function num_keypress() {
 				
-                var num = document.getElementById('jerseyNumber').value;
-                //var lastChar = num[num.length -1];
-                alert(num);
-                //var e = event.charCode;
-                
-              //  var char = event.value;
+                var char = document.getElementById('jerseyNumber').value;
+
                 var lastChar = char[char.length -1];
 //                var key;
 //                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
@@ -60,14 +56,14 @@
                     //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
-				}
-				else if (e == "Enter") { //13 = CR
+				    }
+//				else if (e == "Enter") { //13 = CR
                     
-					document.getElementById("ourTeam").innerHTML = "";
-					document.getElementById("theirTeam").innerHTML = "";
-					document.getElementById("hdnOurTeam").value = "";
-					document.getElementById("hdnTheirTeam").value = "";
-                }
+//					document.getElementById("ourTeam").innerHTML = "";
+//					document.getElementById("theirTeam").innerHTML = "";
+//					document.getElementById("hdnOurTeam").value = "";
+//					document.getElementById("hdnTheirTeam").value = "";
+  //              }
 //				else if (lastChar == "$") { // $ was 36
 //                    openFullscreen(); // 
 					//return false;
