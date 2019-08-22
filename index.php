@@ -40,8 +40,9 @@
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
 			function num_keypress(event) {
-				var e = event.key;
-                alert(e);
+				alert(event.value);
+                var e = event.key;
+                
                 var char = event.value;
                 var lastChar = char[char.length -1];
 //                var key;
