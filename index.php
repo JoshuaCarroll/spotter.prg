@@ -42,7 +42,6 @@
 			function num_keypress() {
 				
                 var num = document.getElementById('jerseyNumber').value;
-                num.preventDefault();
                 //var lastChar = num[num.length -1];
                 alert(num);
                 //var e = event.charCode;
