@@ -56,6 +56,7 @@
                     //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
+                    event.preventDefault();    
 				    }
 //				else if (e == "Enter") { //13 = CR
                     
@@ -67,7 +68,7 @@
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
-                    
+                    event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
