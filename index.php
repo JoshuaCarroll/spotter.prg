@@ -44,10 +44,10 @@
                 
                 var char = "";
                 var lastChar = "";
-                //alert(e);
-                var keycode = e.keyCode;
-                alert(keycode);
-                });
+                
+                //var keycode = e.keyCode;
+                alert(e);
+                
                 //if (e.keyCode == 13 || e.which == 13) { //13 = CR
 					//alert("You hit ENTER");
                     //document.getElementById("ourTeam").innerHTML = "";
@@ -58,12 +58,12 @@
                     //}
                 //else {
                     char = document.getElementById('jerseyNumber').value;
-                    lastChar = char[char.length -1];}
-
+                    lastChar = char[char.length -1];
+                    
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
                     event.preventDefault();    
-				  //  }
+				    }
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
@@ -77,7 +77,7 @@
                     event.preventDefault();
 				
                 }
-            }
+            });
 			
 //			function openFullscreen() {
 //			  document.body.requestFullscreen();
