@@ -55,7 +55,7 @@
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
 				}
-				else if (event.key == "NumpadEntry") { //13 = CR
+				else if (event.key == "Enter") { //13 = CR
                     alert("CR");
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
