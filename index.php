@@ -39,8 +39,9 @@
         <title>Football Spotter Program</title>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			function num_keypress(event) {
-				alert(event.charCode);
+			function num_keypress() {
+				var num = document.getElementById('jerseyNumber').value
+                alert(num);
                 //var e = event.charCode;
                 
  /*               var char = event.value;
@@ -90,7 +91,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeypress="num_keypress(jerseyNumber)" ><!--return num_keypress(event) -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keypress()" ><!--return num_keypress(event) -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
