@@ -52,12 +52,13 @@
                     event.preventDefault();
                     stop;
 				}
-//				else if (e == "Enter") { //13 = CR
+				else if (key == 13) { //13 = CR
                     
-//					document.getElementById("ourTeam").innerHTML = "";
-//					document.getElementById("theirTeam").innerHTML = "";
-//					document.getElementById("hdnOurTeam").value = "";
-//					document.getElementById("hdnTheirTeam").value = "";
+					document.getElementById("ourTeam").innerHTML = "";
+					document.getElementById("theirTeam").innerHTML = "";
+					document.getElementById("hdnOurTeam").value = "";
+					document.getElementById("hdnTheirTeam").value = "";
+                    stop;
   //              }
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
