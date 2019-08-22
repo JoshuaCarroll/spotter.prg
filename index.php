@@ -55,7 +55,7 @@
 					
                     form1.submit();
                     //alert("form Submitted")
-                    return false;    
+                    
 				}
 				else if (key == 13) { //13 = CR
                     alert("CR");
