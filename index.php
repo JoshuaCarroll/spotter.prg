@@ -65,7 +65,7 @@
 //					document.getElementById("hdnTheirTeam").value = "";
   //              }
 				else if (lastChar == "$") { // $ was 36
-                    openFullscreen(); // 
+                    document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
                     
 				}
@@ -78,9 +78,9 @@
 				}
 			}
 			
-			function openFullscreen() {
-			  document.body.requestFullscreen();
-			}
+//			function openFullscreen() {
+//			  document.body.requestFullscreen();
+//			}
 
 //			function closeFullscreen() {
 //			  ocument.cancelFullScreen();
