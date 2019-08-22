@@ -40,30 +40,31 @@
         <meta charset="UTF-8">
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			document.getElementById('jerseyNumber').addEventListener('onkeydown' , function(e) {
-                
-                var char = "";
-                var lastChar = "";
-                
-                //var keycode = e.keyCode;
-                alert(e);
-                
-                //if (e.keyCode == 13 || e.which == 13) { //13 = CR
-					//alert("You hit ENTER");
-                    //document.getElementById("ourTeam").innerHTML = "";
-					//document.getElementById("theirTeam").innerHTML = "";
-					//document.getElementById("hdnOurTeam").value = "";
-					//document.getElementById("hdnTheirTeam").value = "";
-                    //event.preventDefault()
-                    //}
-                //else {
-                    char = document.getElementById('jerseyNumber').value;
-                    lastChar = char[char.length -1];
-                    
+			function num_keypress() {
+				
+                var char = document.getElementById('jerseyNumber').value;
+                var lastChar = char[char.length -1];
+//                var key;
+//                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
+//					key = lastChar.which; //character code is contained in NN4's which property
+//				}
+//				else{
+//					key = lastChar.keyCode; //character code is contained in IE's keyCode property
+//				}
+                    //var key = event.keyCode;
+//                    alert(key);
+                    //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
                     event.preventDefault();    
 				    }
+//				else if (e == "Enter") { //13 = CR
+                    
+//					document.getElementById("ourTeam").innerHTML = "";
+//					document.getElementById("theirTeam").innerHTML = "";
+//					document.getElementById("hdnOurTeam").value = "";
+//					document.getElementById("hdnTheirTeam").value = "";
+  //              }
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
@@ -75,14 +76,12 @@
 //				}
 				else {
                     event.preventDefault();
-				
-                }
-            });
+				}
+			}
 			
 //			function openFullscreen() {
 //			  document.body.requestFullscreen();
 //			}
-
 //			function closeFullscreen() {
 //			  ocument.cancelFullScreen();
 //			}
@@ -90,7 +89,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" ><!--return num_keypress(event) -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber"  onkeyup="num_keypress()" ><!--return num_keypress(event) -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
