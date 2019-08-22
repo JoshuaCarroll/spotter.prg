@@ -42,20 +42,20 @@
 			function num_keypress(event) {
 				var char = event.value;
                 var lastChar = char[char.length -1];
-                var key;
-                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
-					key = lastChar.which; //character code is contained in NN4's which property
-				}
-				else{
-					key = lastChar.keyCode; //character code is contained in IE's keyCode property
+//                var key;
+//                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
+//					key = lastChar.which; //character code is contained in NN4's which property
+//				}
+//				else{
+//					key = lastChar.keyCode; //character code is contained in IE's keyCode property
 				}
                     //var key = event.keyCode;
-                    alert(key);
+//                    alert(key);
                     //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
 				}
-				else if (key == 13) { //13 = CR
+				else if (event.key == "NumpadEntry") { //13 = CR
                     alert("CR");
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
