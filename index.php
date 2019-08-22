@@ -39,7 +39,7 @@
         <title>Football Spotter Program</title>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			document.getElementById('jerseyNumber').addEventListenerfunction(keyup , num_keypress(e)) {
+			document.getElementById('jerseyNumber').addEventListenerfunction(onkeydown , num_keypress(e)) {
                 
                 var char = "";
                 var lastChar = "";
