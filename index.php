@@ -40,7 +40,7 @@
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
 			function num_keypress() {
-				var num = document.getElementById('jerseyNumber').value
+				var num = document.getElementById('jerseyNumber').charCode
                 alert(num);
                 //var e = event.charCode;
                 
