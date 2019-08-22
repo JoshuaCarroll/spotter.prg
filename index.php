@@ -40,7 +40,8 @@
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
 			function num_keypress(event) {
-				var char = event.value;
+				alert(event.key);
+                var char = event.value;
                 var lastChar = char[char.length -1];
 //                var key;
 //                if(lastChar && lastChar.which){ //if which  property of event object is supported (NN4)
@@ -56,7 +57,7 @@
                     form1.submit();
 				}
 				else if (event.key == "Enter") { //13 = CR
-                    alert("CR");
+                    
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
