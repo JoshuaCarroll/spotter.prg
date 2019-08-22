@@ -39,26 +39,29 @@
         <title>Football Spotter Program</title>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			document.getElementById("jerseyNumber").onkeypress = function num_keypress(event) {
+			function num_keypress(e) {
                 
                 var char = "";
                 var lastChar = "";
-                if (event.keyCode == 13 || event.which == 13) { //13 = CR
-					alert("You hit ENTER");
-                    document.getElementById("ourTeam").innerHTML = "";
-					document.getElementById("theirTeam").innerHTML = "";
-					document.getElementById("hdnOurTeam").value = "";
-					document.getElementById("hdnTheirTeam").value = "";
+                var keycode = e.keyCode;
+                alert(keycode);
+                stop;
+                //if (e.keyCode == 13 || e.which == 13) { //13 = CR
+					//alert("You hit ENTER");
+                    //document.getElementById("ourTeam").innerHTML = "";
+					//document.getElementById("theirTeam").innerHTML = "";
+					//document.getElementById("hdnOurTeam").value = "";
+					//document.getElementById("hdnTheirTeam").value = "";
                     event.preventDefault()
-                    }
-                else {
+                    //}
+                //else {
                     char = document.getElementById('jerseyNumber').value;
                     lastChar = char[char.length -1];}
 
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
                     form1.submit();
                     event.preventDefault();    
-				    }
+				  //  }
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
@@ -85,7 +88,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber" ><!--return num_keypress(event) -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup"num_keypress(event)"><!--return num_keypress(event) -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
