@@ -2,10 +2,7 @@
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
-		echo '<script language="javascript">';
-        echo 'alert($jerseyNumber)';
-        echo '</script>';
-/*		if ($jerseyNumber == "54321") {
+/*      if ($jerseyNumber == "54321") {
 			shell_exec('sudo halt');
 		} else*/
         if ($lastCharacter == "+") {
@@ -51,10 +48,10 @@
 				else{
 					key = lastChar.keyCode; //character code is contained in IE's keyCode property
 				}
-                //var key = event.keyCode;
-                alert(key);
-				//if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
-				if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
+                    //var key = event.keyCode;
+                    //alert(key);
+                    //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
+                    if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
 					
                     form1.submit();
                     //alert("form Submitted")
