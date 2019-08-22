@@ -52,10 +52,7 @@
                     /alert(key);
                     //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                     if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
-					
                     form1.submit();
-                    //alert("form Submitted")
-                    
 				}
 				else if (key == 13) { //13 = CR
                     alert("CR");
@@ -63,7 +60,6 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-				    return false;
                 }
 				else if (lastChar == "$") { // $ was 36
                     openFullscreen(); // 
