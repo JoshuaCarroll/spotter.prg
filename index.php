@@ -37,18 +37,17 @@
 <html>
     <head>
         <title>Football Spotter Program</title>
+        <meta charset="UTF-8">
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			document.getElementById('jerseyNumber').addEventListenerfunction(onkeydown , num_keypress(e)) {
+			document.getElementById('jerseyNumber').addEventListenerfunction(onkeydown , function(e)) {
                 
                 var char = "";
                 var lastChar = "";
                 //alert(e);
                 var keycode = e.keyCode;
                 alert(keycode);
-                //var keywhich = e.which;
-                //alert(keywhoch);
-                stop;}
+                }
                 //if (e.keyCode == 13 || e.which == 13) { //13 = CR
 					//alert("You hit ENTER");
                     //document.getElementById("ourTeam").innerHTML = "";
