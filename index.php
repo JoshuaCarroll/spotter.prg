@@ -52,14 +52,15 @@
                     event.preventDefault();
                     stop;
 				}
-				/*else if (key == 13) { //13 = CR
+				else if (key == "13") { //13 = CR
                     
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
+                    event.preventDefault();
                     stop;
-                }*/
+                }
 				else if (lastChar == "$") { // $ was 36
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
