@@ -63,7 +63,7 @@
                     stop;
                 }
 				else if (lastChar == "$") { // $ send keycode 122
-                    document.body.requireFullscreen(); // document.body.requestFullscreen();
+                    document.body.requestFullscreen(); // document.body.requestFullscreen();
 					document.getElementById("jerseyNumber").value = "";          
                     //event.preventDefault();
 				}
