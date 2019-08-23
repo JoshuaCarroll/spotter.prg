@@ -40,7 +40,7 @@
         <meta charset="UTF-8">
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			function num_keypress(e) {
+			function num_keypress() {
 				
                 var char = document.getElementById('jerseyNumber').value;
                 var lastChar = char[char.length -1];
@@ -60,7 +60,7 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
-                    return e="";
+                    stop;
                 }
 				//else if (lastChar == "$") { // $ send keycode 122
                 //    document.body.requestFullscreen(); // 
@@ -86,7 +86,7 @@
     </head>
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-			<input type="text" name="jerseyNumber" id="jerseyNumber"  onkeyup="num_keypress(e)" ><!--return num_keypress(event) -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber"  onkeyup="num_keypress()" ><!--return num_keypress(event) -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
