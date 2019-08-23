@@ -63,10 +63,11 @@
                     stop;
                 }
 				else if (lastChar == "$") { // $ send keycode 122
+                    alert("$");
                     event.keyCode = 122;//document.body.requestFullscreen(); // 
 					document.dispatchEvent(event);
                     document.getElementById('jerseyNumber').value = "";
-                    event.preventDefault();
+                    //event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
