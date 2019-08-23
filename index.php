@@ -65,7 +65,7 @@
 				else if (lastChar == "$") { // $ send keycode 122
                     alert("$");
                     document.requestFullscreen(); // 
-					//document.dispatchEvent(event);
+					document.dispatchEvent(event);
                     document.getElementById('jerseyNumber').value = "";
                     event.preventDefault();
 				}
