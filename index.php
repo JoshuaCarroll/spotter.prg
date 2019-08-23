@@ -62,11 +62,11 @@
                     event.stopPropagation();
                     stop;
                 }
-				//else if (lastChar == "$") { // $ send keycode 122
-                //    document.body.requestFullscreen(); // 
-				//	document.getElementById('jerseyNumber').value = "";
-                //    event.preventDefault();
-				//}
+				else if (lastChar == "$") { // $ send keycode 122
+                    document.body.requestFullscreen(); // 
+					document.getElementById('jerseyNumber').value = "";
+                    event.preventDefault();
+				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
 //					event.preventDefault();
