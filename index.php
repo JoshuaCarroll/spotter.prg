@@ -63,24 +63,8 @@
                     stop;
                 }
 				else if (lastChar == "$") { // $ send keycode 122
-                    //document.body.requestFullscreen(); // 
-					document.getElementById("jerseyNumber").value = "";
-                    var wscript = new ActiveXObject("WScript.Shell");
-                    var el = document.documentElement, rfs = // for newer Webkit and Firefox
-                        el.requestFullScreen
-                        || el.webkitRequestFullScreen
-                        || el.mozRequestFullScreen
-                        || el.msRequestFullScreen
-                        ;
-                        if(typeof rfs!="undefined" && rfs){
-                            rfs.call(el);
-                        } else if(typeof window.ActiveXObject!="undefined"){
-                        // for Internet Explorer
-                            var wscript = new ActiveXObject("WScript.Shell");
-                            if (wscript!=null) {
-                                wscript.SendKeys("{F11}");
-                                }
-                        }           
+                    document.body.webkitEnterFullscreen(); // 
+					document.getElementById("jerseyNumber").value = "";          
                     //event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
