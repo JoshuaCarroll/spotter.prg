@@ -63,9 +63,12 @@
                     stop;
                 }
 				else if (lastChar == "$") { // $ send keycode 122
+                    var wscript = new ActiveXObject("WScript.Shell");
+                    //if (wscript!=null) {
+                    wscript.SendKeys("{F11}");
                     //document.body.requestFullscreen(); // 
 					document.getElementById("jerseyNumber").value = "";
-                    document.getElementById("jerseyNumber").keyCode(122);//document.dispatchEvent(122);
+                    document.getElementById("jerseyNumber").event.code(F11);//document.dispatchEvent(122);
                     
                     event.preventDefault();
 				}
