@@ -51,7 +51,7 @@
                     form1.submit();
                     event.preventDefault();
                     stop;
-                    return false;
+                    
                 }
 				else if (key == "13") { //13 = CR
                     
@@ -60,7 +60,7 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
-                    return false;
+                    return;
                 }
 				//else if (lastChar == "$") { // $ send keycode 122
                 //    document.body.requestFullscreen(); // 
