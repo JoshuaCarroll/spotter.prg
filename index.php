@@ -51,7 +51,8 @@
                     form1.submit();
                     event.preventDefault();
                     stop;
-				}
+                    return false;
+                }
 				else if (key == "13") { //13 = CR
                     
 					document.getElementById("ourTeam").innerHTML = "";
@@ -59,13 +60,13 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
-                    return true;
+                    return false;
                 }
-				else if (lastChar == "$") { // $ send keycode 122
-                    document.body.requestFullscreen(); // 
-					document.getElementById('jerseyNumber').value = "";
-                    event.preventDefault();
-				}
+				//else if (lastChar == "$") { // $ send keycode 122
+                //    document.body.requestFullscreen(); // 
+				//	document.getElementById('jerseyNumber').value = "";
+                //    event.preventDefault();
+				//}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
 //					event.preventDefault();
