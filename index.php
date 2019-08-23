@@ -59,9 +59,9 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
-                    
+                    return true;
                 }
-				else if (lastChar == "$") { // $ was 36
+				else if (lastChar == "$") { // $ send keycode 122
                     document.body.requestFullscreen(); // 
 					document.getElementById('jerseyNumber').value = "";
                     event.preventDefault();
