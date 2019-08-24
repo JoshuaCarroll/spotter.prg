@@ -53,20 +53,19 @@
                     stop;
                     
                 }
-				else if (key == 13) { //13 = CR
+				else if (key == 13) { //13 = CR  works but have to press escape to stop Chrome from waiting a responce.
                     
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
-                    form1.submit();
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
 					document.getElementById("jerseyNumber").value = "";          
                     //event.preventDefault();
-                    return event.keycode = 122;
+                    return console.log("ok");
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
