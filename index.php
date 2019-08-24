@@ -42,8 +42,8 @@
 		<script type="text/javascript">
 			function num_keypress() {
 				
-                var char = document.getElementById('jerseyNumber').value;
-                var lastChar = char[char.length -1];
+                //var char = document.getElementById('jerseyNumber').value;
+                //var lastChar = char[char.length -1];
                 var key = event.keyCode;
                 //alert(key);
                 //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
@@ -60,7 +60,7 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
-                    return console.log("ok");
+                    return ;
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
