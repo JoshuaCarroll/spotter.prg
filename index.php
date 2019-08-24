@@ -53,9 +53,8 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-                    event.keyCode = 27;
                     event.stopPropagation();
-                    return ;
+                    return null;
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
