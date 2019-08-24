@@ -53,11 +53,11 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     $(document).on('keyup keypress', 'form input[type="text"]', function(e) {
-                    if(event.which == 13) {
-                        event.preventDefault();
-                        return false;
-                        }
-                    });
+                        if(e.which == 13) {
+                            e.preventDefault();
+                            return false;
+                            }
+                        });
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
