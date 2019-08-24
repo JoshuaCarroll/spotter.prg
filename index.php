@@ -60,8 +60,7 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
-                    //stop;
-                    return;
+                    form1.submit();
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
