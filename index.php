@@ -52,9 +52,12 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-                    key.preventDefault();
-                    return false;
-                    event.stopPropagation();
+                    $(document).on('keyup keypress', 'form input[type="text"]', function(e) {
+                    if(event.which == 13) {
+                        event.preventDefault();
+                        return false;
+                        }
+                    });
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
