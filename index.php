@@ -51,8 +51,8 @@
                     
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
-					document.getElementById("hdnOurTeam").value = "";
-					document.getElementById("hdnTheirTeam").value = "";
+					document.getElementById("hdnOurTeam").value = " ";
+					document.getElementById("hdnTheirTeam").value = " ";
                     form1.submit();
                     event.stopPropagation();
                     return ;
