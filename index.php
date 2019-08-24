@@ -2,10 +2,9 @@
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
-/*      if ($jerseyNumber == "54321") {
+      if ($jerseyNumber == "54321") {
 			shell_exec('sudo halt');
-		} else*/
-        if ($lastCharacter == "+") {
+		} elseif ($lastCharacter == "+") {
 			$roster = fopen("BRoster.csv","r");
 		} elseif ($lastCharacter == "-") {
 			$roster = fopen("Maxpreps.csv","r"); 
@@ -42,7 +41,6 @@
 		<script type="text/javascript">
 			function num_keypress() {
                 var key = event.keyCode;
-                //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                 if ((key == 107) || (key == 109)) { // 107 = + 109 = -  works 82419
                     form1.submit();
                     event.preventDefault();
