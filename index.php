@@ -46,13 +46,14 @@
                     form1.submit();
                     event.preventDefault();
                 }
-				else if (key == 9) { //13 = CR  works but have to press escape to stop Chrome from waiting a responce.
+				else if (key == 13) { //13 = CR  works but have to press escape to stop Chrome from waiting a responce.
                     
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-                    event.stopPropagation();
+                    //event.stopPropagation();
+                    return (event.keyCode != 13);
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
