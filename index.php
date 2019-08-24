@@ -49,10 +49,10 @@
                 }
 				else if (key == 13) { //13 = CR  works but have to press escape to stop Chrome from waiting a responce.
                     
-					document.getElementById("ourTeam").innerHTML = "";
-					document.getElementById("theirTeam").innerHTML = "";
-					document.getElementById("hdnOurTeam").value = " ";
-					document.getElementById("hdnTheirTeam").value = " ";
+					//document.getElementById("ourTeam").innerHTML = "";
+					//document.getElementById("theirTeam").innerHTML = "";
+					//document.getElementById("hdnOurTeam").value = "";
+					//document.getElementById("hdnTheirTeam").value = "";
                     form1.submit();
                     event.stopPropagation();
                     return ;
