@@ -55,7 +55,7 @@
                     
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
-                    //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
+                    document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
 					document.getElementById("jerseyNumber").value = "";          
                     event.preventDefault();
 				}
