@@ -53,6 +53,7 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
+                    form1.submit();
                     event.stopPropagation();
                     return ;
                 }
