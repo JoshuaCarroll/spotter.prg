@@ -41,17 +41,11 @@
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
 			function num_keypress() {
-				
-                //var char = document.getElementById('jerseyNumber').value;
-                //var lastChar = char[char.length -1];
                 var key = event.keyCode;
-                //alert(key);
                 //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
                 if ((key == 107) || (key == 109)) { // 107 = + 109 = -  works 82419
                     form1.submit();
                     event.preventDefault();
-                    stop;
-                    
                 }
 				else if (key == 13) { //13 = CR  works but have to press escape to stop Chrome from waiting a responce.
                     
