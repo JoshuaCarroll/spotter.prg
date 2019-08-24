@@ -47,7 +47,7 @@
                 var key = event.keyCode;
                 //alert(key);
                 //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
-                if ((lastChar == "+") || (lastChar == "-")) { // 43 = + 45 = -
+                if ((key == 107) || (key == 109)) { // 43 = + 45 = -
                     form1.submit();
                     event.preventDefault();
                     stop;
