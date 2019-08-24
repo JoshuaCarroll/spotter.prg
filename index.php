@@ -60,12 +60,12 @@
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     event.stopPropagation();
+                    return console.log("ok");
                 }
 				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
 					document.getElementById("jerseyNumber").value = "";          
-                    //event.preventDefault();
-                    return console.log("ok");
+                    event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
