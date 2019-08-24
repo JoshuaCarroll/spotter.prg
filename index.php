@@ -77,7 +77,7 @@
 		</script>
     </head>
     <body>
-    	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;">
+    	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;" >
 			<input type="text" name="jerseyNumber" id="jerseyNumber"  onkeyup="num_keypress()" ><!--return num_keypress(event) -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
