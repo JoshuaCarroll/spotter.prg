@@ -53,7 +53,7 @@
                     stop;
                     
                 }
-				else if (key == "13") { //13 = CR
+				else if (key == 13) { //13 = CR
                     
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
@@ -62,7 +62,7 @@
                     event.stopPropagation();
                     stop;
                 }
-				else if (lastChar == "$") { // $ send keycode 122  $ = 164
+				else if (lastChar == 164) { // $ send keycode 122  $ = 164
                     //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
 					document.getElementById("jerseyNumber").value = "";          
                     //event.preventDefault();
