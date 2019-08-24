@@ -47,7 +47,7 @@
                 var key = event.keyCode;
                 //alert(key);
                 //if ((40 <= key) && (key <= 36)){} // 48 = $ 57 = (
-                if ((key == 107) || (key == 109)) { // 43 = + 45 = -
+                if ((key == 107) || (key == 109)) { // 107 = + 109 = -  works 82419
                     form1.submit();
                     event.preventDefault();
                     stop;
@@ -62,10 +62,11 @@
                     event.stopPropagation();
                     stop;
                 }
-				else if (lastChar == "$") { // $ send keycode 122
-                    document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
+				else if (lastChar == "$") { // $ send keycode 122  $ = 164
+                    //document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
 					document.getElementById("jerseyNumber").value = "";          
                     //event.preventDefault();
+                    return event.keycode = 122;
 				}
 //				else if (key == 40) { // ( 				    
 //                    closeFullscreen(); //closeFullscreen not needed esc works
