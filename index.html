@@ -1,6 +1,32 @@
 <html>
-<head><title></title></head>
+<head><title></title>
+<script>
+    function GoInFullscreen(element) {
+        if(element.requestFullscreen)
+            element.requestFullscreen();
+        else if(element.mozRequestFullScreen)
+            element.mozRequestFullScreen();
+        else if(element.webkitRequestFullscreen)
+            element.webkitRequestFullscreen();
+        else if(element.msRequestFullscreen)
+            element.msRequestFullscreen();
+    }
+
+    /* Get out of full screen */
+    function GoOutFullscreen() {
+        if(document.exitFullscreen)
+            document.exitFullscreen();
+        else if(document.mozCancelFullScreen)
+            document.mozCancelFullScreen();
+        else if(document.webkitExitFullscreen)
+            document.webkitExitFullscreen();
+        else if(document.msExitFullscreen)
+            document.msExitFullscreen();
+    }
+</script>
+</head>
 <body>
-<iframe src="page2.php" height="320" width="480"></iframe>
+    <button onclick="GoInFullScreen(document.getElementById('frame'));">BIG</button>
+<iframe src="page2.php" height="320" width="480" id="frame"></iframe>
 </body>
 </html>

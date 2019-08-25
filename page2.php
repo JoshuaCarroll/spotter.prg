@@ -53,42 +53,13 @@
 					document.getElementById("hdnTheirTeam").value = "";
                     
                 }
-				else if (key == 188) { // Single quote
-                    GoInFullscreen(document.getElementById("element"));
-                    event.preventDefault();
-				}
-//				else if (key == 40) { // ( 				    
-//                    closeFullscreen(); //closeFullscreen not needed esc works
-//					event.preventDefault();
-//				}
 				else {
                     console.log(key);
                     event.preventDefault();
 				}
 			}
 			
-            function GoInFullscreen(element) {
-                if(element.requestFullscreen)
-                    element.requestFullscreen();
-                else if(element.mozRequestFullScreen)
-                    element.mozRequestFullScreen();
-                else if(element.webkitRequestFullscreen)
-                    element.webkitRequestFullscreen();
-                else if(element.msRequestFullscreen)
-                    element.msRequestFullscreen();
-            }
 
-            /* Get out of full screen */
-            function GoOutFullscreen() {
-                if(document.exitFullscreen)
-                    document.exitFullscreen();
-                else if(document.mozCancelFullScreen)
-                    document.mozCancelFullScreen();
-                else if(document.webkitExitFullscreen)
-                    document.webkitExitFullscreen();
-                else if(document.msExitFullscreen)
-                    document.msExitFullscreen();
-            }
 		</script>
     </head>
     <body id="element">
