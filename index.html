@@ -12,10 +12,13 @@
 
 <script>
 function button_click() {
-    var w = window.screen.width;
-    var h = window.screen.height;
+    var adjustWide = 2;
+    var adjustLong = 30;
+    
+    var wide = window.screen.width + adjustWide;
+    var tall = window.screen.height + adjustLong;
 
-    window.open("page2.php","","top=0,left=0,width=" + w + ",height=" + h);
+    window.open("page2.php","","top=-" + adjustLong + ",left=-" + adjustWide + ",width=" + wide + ",height=" + tall);
 }
 </script> 
     
