@@ -42,20 +42,19 @@
 		<script type="text/javascript">
 			function num_keypress() {
                 var key = event.keyCode;
-                if ((key == 107) || (key == 109)) { // 107 = + 109 = -  works 82419
+                if ((key == 107) || (key == 109)) { // Plus or minus
                     form1.submit();
                     event.preventDefault();
                 }
-				else if (key == 13) { //13 = CR  works 82419
+				else if (key == 13) { //Carriage return
 					document.getElementById("ourTeam").innerHTML = "";
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
                     
                 }
-				else if (lastChar == 164) { // $ send keycode 122  $ = 164
-                    document.documentElement.requestFullscreen(); // document.body.requestFullscreen();
-					document.getElementById("jerseyNumber").value = "";          
+				else if (lastChar == 164) { // Dollar sign
+                    GoInFullscreen(document.getElementById("element"));
                     event.preventDefault();
 				}
 //				else if (key == 40) { // ( 				    
@@ -67,15 +66,31 @@
 				}
 			}
 			
-//			function openFullscreen() {
-//			  document.body.requestFullscreen();
-//			}
-//			function closeFullscreen() {
-//			  ocument.cancelFullScreen();
-//			}
+            function GoInFullscreen(element) {
+                if(element.requestFullscreen)
+                    element.requestFullscreen();
+                else if(element.mozRequestFullScreen)
+                    element.mozRequestFullScreen();
+                else if(element.webkitRequestFullscreen)
+                    element.webkitRequestFullscreen();
+                else if(element.msRequestFullscreen)
+                    element.msRequestFullscreen();
+            }
+
+            /* Get out of full screen */
+            function GoOutFullscreen() {
+                if(document.exitFullscreen)
+                    document.exitFullscreen();
+                else if(document.mozCancelFullScreen)
+                    document.mozCancelFullScreen();
+                else if(document.webkitExitFullscreen)
+                    document.webkitExitFullscreen();
+                else if(document.msExitFullscreen)
+                    document.msExitFullscreen();
+            }
 		</script>
     </head>
-    <body>
+    <body id="element">
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;" >
 			<input type="text" name="jerseyNumber" id="jerseyNumber"  onkeyup="num_keypress()" ><!--return num_keypress(event) -->
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
