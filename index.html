@@ -12,7 +12,10 @@
 
 <script>
 function button_click() {
- window.open("page2.php","","fullscreen,scrollbars");
+    var w = window.screen.width;
+    var h = window.screen.height;
+
+    window.open("page2.php","","top=0,left=0,width=" + w + ",height=" + h);
 }
 </script> 
     
