@@ -9,8 +9,9 @@ body {
 
 input#jerseyNumber {
 	position: absolute;
-	top: 320px;
+	bottom: 20px;
 	background-color: #222;
+    color: #ddd;
 	border-style: none;
 }
 #ourTeam:empty, #theirTeam:empty {
