@@ -53,7 +53,7 @@
 					document.getElementById("hdnTheirTeam").value = "";
                     
                 }
-				else if (key == 164) { // Dollar sign
+				else if (key == 188) { // Single quote
                     GoInFullscreen(document.getElementById("element"));
                     event.preventDefault();
 				}
