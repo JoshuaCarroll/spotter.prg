@@ -53,7 +53,7 @@
 					document.getElementById("hdnTheirTeam").value = "";
                     
                 }
-				else if (lastChar == 164) { // Dollar sign
+				else if (key == 164) { // Dollar sign
                     GoInFullscreen(document.getElementById("element"));
                     event.preventDefault();
 				}
