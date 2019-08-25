@@ -2,7 +2,7 @@ body {
 	background: #000000;
 	color: rgba(255,255,255,0.2);
 	font-family: Arial;
-	font-size: 20px;
+	font-size: 40px;
 	margin: 0;
 	padding 0;
 }
@@ -44,7 +44,7 @@ input#jerseyNumber {
 }
 
 .player .name {
-	color: #fff;
+	color: rgba(255,255,255,1);
 }
 
 .player .position {
