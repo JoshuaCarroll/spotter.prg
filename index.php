@@ -40,7 +40,7 @@
         <meta charset="UTF-8">
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
-			function num_keypress() {
+			function num_keyup() {
                 var key = event.keyCode;
                 if ((key == 107) || (key == 109)) { // Plus or minus
                     form1.submit();
@@ -62,6 +62,7 @@
 //					event.preventDefault();
 //				}
 				else {
+                    console.log(key);
                     event.preventDefault();
 				}
 			}
@@ -92,7 +93,7 @@
     </head>
     <body id="element">
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;" >
-			<input type="text" name="jerseyNumber" id="jerseyNumber"  onkeyup="num_keypress()" ><!--return num_keypress(event) -->
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" >
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
 			<div id="ourTeam"><?= $ourTeam ?></div>
