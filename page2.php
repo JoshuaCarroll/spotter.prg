@@ -8,7 +8,7 @@
           if ($lastCharacter == "+") {
 			$roster = fopen("BRoster.csv","r");
 		} elseif ($lastCharacter == "-") {
-			$roster = fopen("Maxpreps.csv","r"); 
+			$roster = fopen("ORoster.csv","r"); 
 		}
 		
 		while(!feof($roster)) {
