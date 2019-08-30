@@ -51,7 +51,7 @@
 					document.getElementById("theirTeam").innerHTML = "";
 					document.getElementById("hdnOurTeam").value = "";
 					document.getElementById("hdnTheirTeam").value = "";
-                    document.getElementById("jerseyNumber").value = "";
+                    document.getElementById("jerseyNumber").innerHTML = "";
                 }
 				else {
                     console.log(key);
