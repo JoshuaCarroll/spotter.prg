@@ -4,7 +4,7 @@
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
       /*if ($jerseyNumber == "54321") {
 			shell_exec('sudo halt');
-		} else*/
+		} else  */
           if ($lastCharacter == "+") {
 			$roster = fopen("BRoster.csv","r");
 		} elseif ($lastCharacter == "-") {
