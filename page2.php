@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "database";
+$database = "player.db";
 $username = "root";
 $password = "21802Ghc<";
 $message = "Connected";
