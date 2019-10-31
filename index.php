@@ -7,5 +7,6 @@
     <input type="file" name="csvfile" required="required" /> //changed
     <input type="submit" valua="upload" />
     </form>
+    <p>This is a test</p>
 </body>
 </html>
