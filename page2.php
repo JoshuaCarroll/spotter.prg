@@ -1,12 +1,12 @@
 <?php
 $servername = "localhost";
-$database = "player.db";
+$database = "player";
 $username = "root";
 $password = "21802Ghc<";
 $message = "Connected";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "21802Ghc<", "player");
+$conn = mysqli_connect("MariaDB", "root", "21802Ghc<", "player");
 
 // Check connection
 
