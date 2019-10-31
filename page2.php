@@ -6,7 +6,7 @@ $password = "21802Ghc<";
 $message = "Connected";
 // Create connection
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+//$conn = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
 
@@ -47,7 +47,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
 	}
-mysqli_close($conn);
+//mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
