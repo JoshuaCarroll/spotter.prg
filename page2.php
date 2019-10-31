@@ -6,15 +6,15 @@ $password = "21802Ghc<";
 $message = "Connected";
 // Create connection
 
-$conn = mysqli_conncect($servername, $username, $password, $database);
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
 
-//if ($conn->connect_error) {
-//die("Connection failed: " . $conn->connect_error);
-//}
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
 
-//echo "<script type='text/javascript'>alert('$message');</script>";
+echo "<script type='text/javascript'>alert('$message');</script>";
 
 
 
