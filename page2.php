@@ -5,13 +5,13 @@ $username = "root";
 $password = "21802Ghc<";
 $message = "Didn't Connect";
 // Create connection
-echo "<script type='text/javascript'>alert('$message')</script>"
+
 $conn = mysqli_connect("localhost", "root", "21802Ghc<");
 
 // Check connection
 
 if (mysqli_connect_errno()) {
-echo "Connection failed: " . mysqli_connect_errno();
+echo "<script type='text/javascript'>alert('$message')</script>";
 }
 
 //echo "<script type='text/javascript'>alert('$message');</script>";
