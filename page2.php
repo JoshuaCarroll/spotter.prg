@@ -6,7 +6,7 @@ $password = "21802Ghc<";
 $message = "Connected";
 // Create connection
 
-$conn = mysqli_connect("localhost", "pi", "21802Ghc<", "player.db");
+$conn = mysqli_connect("localhost", "pi", "", "player.db");
 
 // Check connection
 
