@@ -6,13 +6,13 @@ $password = "21802Ghc<";
 $message = "Didn't Connect";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "21802Ghc<");
+$conn = mysqli_connect("localhost", "root", "21802Ghc<", "player");
 
 // Check connection
 
-if (mysqli_connect_errno()) {
-echo "<script type='text/javascript'>alert('$message')</script>";
-}
+//if (mysqli_connect_errno()) {
+//echo "<script type='text/javascript'>alert('$message')</script>";
+//}
 
 //echo "<script type='text/javascript'>alert('$message');</script>";
 
