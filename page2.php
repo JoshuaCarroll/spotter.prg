@@ -47,7 +47,7 @@ $conn = mysqli_connect("localhost", "root", "21802Ghc<");
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
 	}
-//mysqli_close($conn);
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
