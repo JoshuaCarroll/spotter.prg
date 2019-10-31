@@ -3,7 +3,7 @@ $servername = "localhost";
 $database = "database";
 $username = "root";
 $password = "21802Ghc<";
-
+$message = "Connected";
 // Create connection
 
 $conn = mysqli_conncect($servername, $username, $password, $database);
@@ -14,9 +14,9 @@ if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 
-echo “Connected”;
+echo "<script type='text/javascript'>alert('$message');</script>";
 
-mysqli_close($conn);
+
 
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
@@ -47,6 +47,7 @@ mysqli_close($conn);
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
 	}
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
