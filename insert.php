@@ -8,9 +8,9 @@ else
     $file = $_FILES['csvfile']['tmp_name'];
     $handle = fopen($file,"r");
  //   $i=0;
-    $table=rtrim($_FILES['csvfile']['name'],".csv");
+ //   $table=rtrim($_FILES['csvfile']['name'],".csv");
     echo $table;
-    $query="CREATATE TABLE $table(Number INT(3),Name VARCHAR(30),Postion VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(3));";
+    $query="CREATATE TABLE players(Number INT(3),Name VARCHAR(30),Postion VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(3));";
     if (mysqli_query($con,$query)){
     echo "table created";    
     }
