@@ -10,7 +10,7 @@ else
  //   $i=0;
  //   $table=rtrim($_FILES['csvfile']['name'],".csv");
     echo $table;
-    $query="CREATE TABLE players(Number INT(3),Name VARCHAR(30),Position VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(3));";
+    $query="CREATE TABLE players(Number INT,Name VARCHAR(30),Position VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight VARCHAR(3);";
     if (mysqli_query($con,$query)){
     echo "table created";    
     }
