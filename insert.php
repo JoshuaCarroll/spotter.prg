@@ -10,9 +10,9 @@ else
  //   $i=0;
     $table=rtrim($_FILES['csvfile']['name'],".csv");
     echo $table;
-    $query="CREATATE TABLE $table(Number INT(3),Name VARCHAR(30),Postion VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(3));";
-    mysqli_query($con,$query);
-    echo $query,"<br>";
+//    $query="CREATATE TABLE $table(Number INT(3),Name VARCHAR(30),Postion VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(3));";
+//    mysqli_query($con,$query);
+//    echo $query,"<br>";
     while(($cont=fgetcsv($handle,1000,","))!==false)
     {
         
@@ -31,8 +31,13 @@ else
 //        {
             $query="INSERT INTO $table ($num,$name,$pos,$class,$h,$w) VALUES ('$cont[0]','$cont[1]','$cont[2]','$cont[3]','$cont[4]','$cont[5]');";
             mysqli_query($con,$query);
-            echo $query,"<br>";
-    }
+            if(mysqli_query($con, $query)){
+                echo "Records inserted successfully.";
+                } else{
+                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                }
+//            echo $query,"<br>";
+            }
  //       $i++;
  //   }
     
