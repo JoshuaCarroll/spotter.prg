@@ -15,7 +15,7 @@ else
     echo "table created";    
     }
     else
-    {echo "table failed";}
+    {echo "table exists";}
 //    echo $query,"<br>";
     while(($cont=fgetcsv($handle,1000,","))!==false)
     {
@@ -33,7 +33,7 @@ else
 //        }
 //        else
 //        {
-            $query="INSERT INTO players (Number,Name,Position,Class,Height,Weight) VALUES ($cont[0],$cont[1],$cont[2],$cont[3],$cont[4],$cont[5]);";
+            $query="INSERT INTO players(Number,Name,Position,Class,Height,Weight) VALUES ($cont[0],$cont[1],$cont[2],$cont[3],$cont[4],$cont[5]);";
             mysqli_query($con,$query);
             if(mysqli_query($con, $query)){
                 echo "Records inserted successfully.";
