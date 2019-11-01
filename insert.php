@@ -28,6 +28,7 @@ if ($con)
 //        else
 //        {
             $query="INSERT INTO $table ($num,$name,$pos,$class,$h,$w) VALUES ('$cont[0]','$cont[1]','$cont[2]','$cont[3]','$cont[4]','$cont[5]');";
+            mysqli_query($con,$query);
             echo $query,"<br>";
     }
  //       $i++;
