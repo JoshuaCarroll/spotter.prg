@@ -34,7 +34,7 @@ else
 //        }
 //        else
 //        {
-            $query="INSERT INTO players(Number,Name,Position,Class,Height,Weight) VALUES('$cont[0]','$cont[1]','$cont[2]','$cont[3]','skip','skip');";
+            $query="INSERT INTO players(Number,Name,Position,Class,Height,Weight) VALUES('$cont[0]','$cont[1]','$cont[2]','$cont[3]','skip','0');";
             
             if((mysqli_query($con,$query))!==false){
                 echo "Records inserted successfully";
