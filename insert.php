@@ -37,5 +37,6 @@ if ($con)
 }
 else
 {echo "connection failed";}
+echo "Finished";
 mysqli_close($con);
 ?>
