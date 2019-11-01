@@ -7,6 +7,7 @@ if ($con)
     $handle = fopen($file,"r");
  //   $i=0;
     $table=rtrim($_FILES['csvfile']['name'],".csv");
+    echo $table;
     $query="CREATATE TABLE $table(Number INT(3),Name VARCHAR(30),Postion VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(3));";
     mysqli_query($con,$query);
     echo $query,"<br>";
