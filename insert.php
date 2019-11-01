@@ -19,7 +19,7 @@ else
 //    echo $query,"<br>";
     while(($cont = fgetcsv($handle,1000,","))!==false)
     {
-        echo $cont;
+        echo $cont[0] . "<br>";
 //        if(i==0){
 //            $num=$cont[0];
 //            $name=$cont[1];
