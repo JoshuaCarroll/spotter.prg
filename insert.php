@@ -10,7 +10,7 @@ else
  //   $i=0;
  //   $table=rtrim($_FILES['csvfile']['name'],".csv");
     echo $table;
-    $query="CREATE TABLE players(Number INT(3),Name VARCHAR(30),Position VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(4);";
+    $query="CREATE TABLE players(Number INT(3),Name VARCHAR(30),Position VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(4));";
     if (mysqli_query($con,$query)){
     echo "table created";    
     }
@@ -33,7 +33,7 @@ else
 //        }
 //        else
 //        {
-            $query="INSERT INTO players(Number,Name,Position,Class,Height,Weight) VALUES ($cont[0],$cont[1],$cont[2],$cont[3],$cont[4],$cont[5]);";
+            $query="INSERT INTO players(Number,Name,Position,Class,Height,Weight) VALUE($cont[0],$cont[1],$cont[2],$cont[3],$cont[4],$cont[5]);";
             
             if(mysqli_query($con,$query)){
                 echo "Records inserted successfully";
