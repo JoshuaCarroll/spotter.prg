@@ -1,7 +1,9 @@
 <?php
 $con = mysqli_connect("localhost","root","21802Ghc<","BRoster");
-
-if ($con)
+if($con === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+else
 {
     $file = $_FILES['csvfile']['tmp_name'];
     $handle = fopen($file,"r");
@@ -35,8 +37,7 @@ if ($con)
  //   }
     
 }
-else
-{echo "connection failed";}
+
 echo "Finished";
 mysqli_close($con);
 ?>
