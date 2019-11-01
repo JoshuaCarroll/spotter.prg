@@ -5,7 +5,7 @@ if($con === false){
 }
 else
 {
-    $file = $_FILES['csvfile']['tmp_name'];
+    $file = "BRoster.csv";
     $handle = fopen($file,"r");
  //   $i=0;
  //   $table=rtrim($_FILES['csvfile']['name'],".csv");
