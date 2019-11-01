@@ -11,7 +11,8 @@ else
  //   $table=rtrim($_FILES['csvfile']['name'],".csv");
     echo $table;
     $query="CREATE TABLE players(Number INT(3),Name VARCHAR(30),Position VARCHAR(5),Class VARCHAR(2),Height VARCHAR(5),Weight INT(4));";
-    if (mysqli_query($con,$query)){
+    if ((mysqli_query($con,$query))!==false)
+    {
     echo "table created";    
     }
     else
@@ -19,7 +20,7 @@ else
 //    echo $query,"<br>";
     while(($cont = fgetcsv($handle,1000,","))!==false)
     {
-        echo $cont[0] . "<br>";
+
 //        if(i==0){
 //            $num=$cont[0];
 //            $name=$cont[1];
@@ -35,10 +36,10 @@ else
 //        {
             $query="INSERT INTO players(Number,Name,Position,Class,Height,Weight) VALUES($cont[0],$cont[1],$cont[2],$cont[3],$cont[4],$cont[5]);";
             
-            if(mysqli_query($con,$query)){
-//                echo "Records inserted successfully";
+            if((mysqli_query($con,$query))!==false){
+                echo "Records inserted successfully";
                 } else{
-//                echo "ERROR: Not able to execute $query " . mysqli_error($link) . "<br>";
+                echo "ERROR: Not able to execute" . mysqli_error($con) . "<br>";
                 }
 //            echo $query,"<br>";
             }
