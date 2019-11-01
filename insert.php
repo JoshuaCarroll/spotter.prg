@@ -29,12 +29,12 @@ else
 //        }
 //        else
 //        {
-            $query="INSERT INTO $table ($num,$name,$pos,$class,$h,$w) VALUES ('$cont[0]','$cont[1]','$cont[2]','$cont[3]','$cont[4]','$cont[5]');";
+            $query="INSERT INTO $table ($num,$name,$pos,$class,$h,$w) VALUES ($cont[0],$cont[1],$cont[2],$cont[3],$cont[4],$cont[5]);";
             mysqli_query($con,$query);
             if(mysqli_query($con, $query)){
                 echo "Records inserted successfully.";
                 } else{
-                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                echo "ERROR: Not able to execute $query. <br> " . mysqli_error($link);
                 }
 //            echo $query,"<br>";
             }
