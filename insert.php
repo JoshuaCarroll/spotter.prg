@@ -30,7 +30,9 @@ if ($con)
     }
  //       $i++;
  //   }
+    
 }
 else
 {echo "connection failed";}
+mysqli_close($con);
 ?>
