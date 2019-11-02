@@ -1,23 +1,13 @@
 <?php
-$servername = "localhost";
-$database = "player";
-$username = "root";
-$password = "21802Ghc<";
 $message = "Didn't Connect";
 $message2 = "Connected";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "21802Ghc<", "BRoster");
-
-// Check connection
-
-if (mysqli_connect_errno()) {
-echo "<script type='text/javascript'>alert('$message')</script>";
-}
-
-echo "<script type='text/javascript'>alert('$message2');</script>";
-
-
+$conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
+if($con === false){
+    echo $message;}
+else
+    {echo $message2;}
 
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
@@ -60,7 +50,7 @@ mysqli_close($conn);
 		<script type="text/javascript">
 			function num_keyup() {
                 var key = event.keyCode;
-                if ((key == 107) || (key == 109)) { // Plus or minus
+                if ((key == 107) || (key == 109)) { // Plus or minus on keypad
                     form1.submit();
                     event.preventDefault();
                 }
