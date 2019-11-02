@@ -15,21 +15,25 @@ else
           if ($lastCharacter == "+") {
  // call the data for $jerseyNumber
               $query = "SELECT (Number,Name,Position) FROM BRoster WHERE INDEX $jerseyNumber;";
-              echo "<script type='text/javascript'>alert('$query');</script>";
-			$roster = fopen("BRoster.csv","r");
-		} elseif ($lastCharacter == "-") {
-			$roster = fopen("ORoster.csv","r"); 
+ //             echo "<script type='text/javascript'>alert('$query');</script>";
+              $results = mysqli_query($conn,$query);
+              $row=mysqli_fetch_assoc($result);
+              $name = $row[1];
+              $position = $row[2];
+//			$roster = fopen("BRoster.csv","r");
+//		} elseif ($lastCharacter == "-") {
+//			$roster = fopen("ORoster.csv","r"); 
 		}
 		
-		while(!feof($roster)) {
-			$row = fgetcsv($roster);
-			if ($row[0] == $jerseyNumber) {
-				$name = $row[1];
-				$position = $row[2];
-			}
-		}
+//		while(!feof($roster)) {
+//			$row = fgetcsv($roster);
+//			if ($row[0] == $jerseyNumber) {
+//				$name = $row[1];
+//				$position = $row[2];
+//			}
+//		}
 		
-		fclose($roster);
+//		fclose($roster);
 
 		$ourTeam = $_POST["hdnOurTeam"];
 		$theirTeam = $_POST["hdnTheirTeam"];
