@@ -7,7 +7,7 @@ $message = "Didn't Connect";
 $message2 = "Connected";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "21802Ghc<", "player");
+$conn = mysqli_connect("localhost", "root", "21802Ghc<", "BRoster");
 
 // Check connection
 
