@@ -13,6 +13,9 @@ else
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
           if ($lastCharacter == "+") {
+ // call the data for $jerseyNumber
+              $query = "SELECT (Number,Name,Position) FROM BRoster WHERE INDEX $jerseyNumber;";
+              echo "<script type='text/javascript'>alert('$query');</script>";
 			$roster = fopen("BRoster.csv","r");
 		} elseif ($lastCharacter == "-") {
 			$roster = fopen("ORoster.csv","r"); 
