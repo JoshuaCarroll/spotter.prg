@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","21802Ghc<", 'SpotterDB');
+$con = mysqli_connect("localhost","root","21802Ghc<", "SpotterDB");
 // Open db SpotterDB
 if($con === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
