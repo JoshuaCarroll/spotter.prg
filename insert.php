@@ -10,16 +10,16 @@ else
     $file = "BRoster.csv";
     $handle = fopen($file,"r");
 
-    $query="CREATE TABLE BRoster(Number INT(3),Name VARCHAR(30),Position VARCHAR(5));"; 
+    $query="CREATE TABLE BRoster(Number INT(3),Name VARCHAR(30),Position VARCHAR(5), INDEX (Number));"; 
     // removed ,Class VARCHAR(2),Height VARCHAR(5),Weight INT(4)
     
     if ((mysqli_query($con,$query))!==false) //test for table
     {
-        echo "table created";    
+        echo "table created <br>";    
     }
     else
     {
-        echo "table exists";
+        echo "table exists <br>";
         
     
     }
@@ -28,7 +28,7 @@ else
             $query="INSERT INTO BRoster(Number,Name,Position) VALUES('$cont[0]','$cont[1]','$cont[2]');";
             
             if((mysqli_query($con,$query))!==false){
-                echo "Records inserted successfully";
+                echo "Records inserted successfully <br>";
                 } else{
                 echo "ERROR: Not able to execute" . mysqli_error($con) . "<br>";
                 }
