@@ -14,13 +14,13 @@ if($con === false){
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
           if ($lastCharacter == "+") {
  // call the data for $jerseyNumber
-              $query = "SELECT (Number,Name,Position) FROM BRoster ;";
+              $query = "SELECT (Number,Name,Position) FROM BRoster WHERE Number = '$jerseyNumber';";
  //             echo "<script type='text/javascript'>alert('$query');</script>";
               $results = mysqli_query($conn,$query);
               $row = mysqli_fetch_assoc($results);
               $name = $row[1];
               $position = $row[2];
-              echo "<script type='text/javascript'>alert('$results');</script>";
+              echo "<script type='text/javascript'>alert('$query');</script>";
 //			$roster = fopen("BRoster.csv","r");
 //		} elseif ($lastCharacter == "-") {
 //			$roster = fopen("ORoster.csv","r"); 
