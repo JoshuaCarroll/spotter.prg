@@ -20,7 +20,7 @@ if($con === false){
               $row = mysqli_fetch_assoc($results);
               $name = $row[1];
               $position = $row[2];
-              echo "<script type='text/javascript'>alert('$row');</script>";
+              echo "<script type='text/javascript'>alert('$results');</script>";
 //			$roster = fopen("BRoster.csv","r");
 //		} elseif ($lastCharacter == "-") {
 //			$roster = fopen("ORoster.csv","r"); 
