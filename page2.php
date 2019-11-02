@@ -7,7 +7,7 @@ $conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
 if($con === false){
     echo "<script type='text/javascript'>alert($message);</script>";}
 else
-    {echo "<script type='text/javascript'>alert($message2);</script>";}
+    {echo $message2; }//"<script type='text/javascript'>alert($message2);</script>";}
 
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
