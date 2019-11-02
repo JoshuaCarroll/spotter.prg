@@ -17,7 +17,7 @@ else
               $query = "SELECT (Number,Name,Position) FROM BRoster WHERE INDEX $jerseyNumber;";
  //             echo "<script type='text/javascript'>alert('$query');</script>";
               $results = mysqli_query($conn,$query);
-              $row=mysqli_fetch_assoc($result);
+              $row = mysqli_fetch_assoc($results);
               $name = $row[1];
               $position = $row[2];
 //			$roster = fopen("BRoster.csv","r");
