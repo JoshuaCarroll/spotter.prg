@@ -9,7 +9,7 @@ if($con === false){
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
-        if ($lastCharacter == "+") 
+        if ($lastCharacter == "+") // Test for Bruin
         {
           // call the data for $jerseyNumber
           $query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
@@ -20,7 +20,7 @@ if($con === false){
           $name = $row[1];
           $position = $row[2];
         }
-        if ($lastCharacter == "+") 
+        if ($lastCharacter == "-") // test for Opposition
         {
           // call the data for $jerseyNumber
           $query = "SELECT * FROM ORoster WHERE Number=$jerseyNumber;";
