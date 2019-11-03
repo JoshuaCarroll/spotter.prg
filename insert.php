@@ -34,7 +34,7 @@ else
     $file = "ORoster.csv";
     $handle = fopen($file,"r");
     // Create a table for the Bruins
-    $query="CREATE TABLE BRoster(Number INT(3),Name VARCHAR(30),Position VARCHAR(5), INDEX (Number));"; 
+    $query="CREATE TABLE ORoster(Number INT(3),Name VARCHAR(30),Position VARCHAR(5), INDEX (Number));"; 
     if ((mysqli_query($con,$query))!==false) //test for table
     {
         echo "table created <br>";    
