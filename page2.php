@@ -16,8 +16,9 @@ if($con === false){
  // call the data for $jerseyNumber
               $query = "SELECT (Number,Name,Position) FROM BRoster USE INDEX $jerseyNumber;";
               $results = mysqli_query($conn,$query);
-              echo "<script type='text/javascript'>alert('$results');</script>";
+              
               $row = mysqli_fetch_assoc($results);
+              echo "<script type='text/javascript'>alert('$row');</script>";
               $name = $row[1];
               $position = $row[2];
 //              echo "<script type='text/javascript'>alert('$query');</script>";
