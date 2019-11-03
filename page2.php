@@ -18,9 +18,10 @@ if($con === false){
               $results = mysqli_query($conn,$query);
               
               $row = mysqli_fetch_assoc($results);
-              echo "<script type='text/javascript'>alert('$row');</script>";
+              
               $name = $row[1];
               $position = $row[2];
+              echo "<script type='text/javascript'>alert('$name');</script>";
 //              echo "<script type='text/javascript'>alert('$query');</script>";
 //			$roster = fopen("BRoster.csv","r");
 //		} elseif ($lastCharacter == "-") {
