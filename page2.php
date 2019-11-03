@@ -21,7 +21,7 @@ if($con === false){
               
               $name = $row[1];
               $position = $row[2];
-              echo "<script type='text/javascript'>alert('$name');</script>";
+              echo "<script type='text/javascript'>alert('$row[1]');</script>";
 //              echo "<script type='text/javascript'>alert('$query');</script>";
 //			$roster = fopen("BRoster.csv","r");
 //		} elseif ($lastCharacter == "-") {
