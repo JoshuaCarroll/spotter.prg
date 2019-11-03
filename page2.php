@@ -14,7 +14,8 @@ if($con === false){
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
           if ($lastCharacter == "+") {
  // call the data for $jerseyNumber
-              $query = "SELECT (Number,Name,Position) FROM BRoster ;";
+              Number = $jerseyNumber;
+              $query = "SELECT (Number,Name,Position) FROM BRoster USE INDEX Number;";
 
               echo "<script type='text/javascript'>alert('$query');</script>";
               $results = mysqli_query($conn,$query);
