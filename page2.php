@@ -17,7 +17,7 @@ if($con === false){
               $query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
               $results = mysqli_query($conn,$query);
               
-              $row = mysqli_fetch_assoc($results);
+              $row=mysqli_fetch_array($results,MYSQLI_NUM);
               
               $name = $row[1];
               $position = $row[2];
