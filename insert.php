@@ -50,7 +50,7 @@ else
             {
                 echo "Records inserted successfully <br>";
             } else{
-                echo "ERROR: Not able to execute" . mysqli_error($con) . "<br>";
+                echo $cont[0] . $cont[1] . $cont[2] . "ERROR" . mysqli_error($con) . "<br>";
             }
     }
 }
