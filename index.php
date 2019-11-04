@@ -49,7 +49,7 @@ if($con === false){
         }
         
     
-        $query = "INSERT INTO Screen (Ourteam) VALUES $ourTeam;";
+        $query = "INSERT INTO Screen (Ourteam) VALUES ($ourTeam);";
         if((mysqli_query($conn,$query))==false)
         {
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($conn) . "<br>";
