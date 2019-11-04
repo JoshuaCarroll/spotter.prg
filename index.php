@@ -59,15 +59,15 @@ if($con === false){
         
         $query = "SELECT Ourteam FROM Screen;";
         $result = mysqli_query($conn,$query);
-        if ($result){
+        if ($result==true){
         echo "1";
         }
         $row = mysqli_fetch_assoc($result);
-        if ($row){
+        if ($row==true){
         $Screen = $row[0];
         echo "2";}
-        echo "3";
-        echo $Screen;
+        
+        echo "This is the screen " . $Screen;
 	}
 mysqli_close($conn);
 ?>
