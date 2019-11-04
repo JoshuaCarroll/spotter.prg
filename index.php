@@ -50,9 +50,9 @@ if($con === false){
         } else{
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
-        $query = "SELECT * FROM Screen;";
-        echo $query;
-        $Screen = mysqli_query($con,$query);
+        $query = "SELECT (Ourteam,Theirteam) FROM Screen;";
+        $result = mysqli_query($con,$query);
+        $Screen = mysql_fetch_row($result);
         echo $Screen;
 	}
 mysqli_close($conn);
