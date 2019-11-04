@@ -46,12 +46,12 @@ if($con === false){
         $query = "INSERT INTO Screen (Ourteam) VALUES ($ourTeam);";
         if((mysqli_query($con,$query))!==false)
         {
-            echo "Records inserted successfully <br>";
+     //       echo "Records inserted successfully <br>";
      //       echo $ourTeam . " " . $theirTeam;
         } else{
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
-        $query = "SELECT (Ourteam) FROM Screen;";
+        $query = "SELECT Ourteam FROM Screen;";
         $result = mysqli_query($con,$query);
         $Screen = $ourTeam;//mysql_fetch_row($result);
  //       echo $Screen;
