@@ -41,7 +41,7 @@ if($con === false){
 		} elseif ($lastCharacter == "-") {
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
-        $query = "DELETE * FROM Screen";
+        $query = "DELETE FROM Screen";
         if (mysqli_query($con,$query)) {
             echo DELETED;
         }
@@ -50,13 +50,13 @@ if($con === false){
         $query = "INSERT INTO Screen (Ourteam) VALUES ('11 Dylan Allison WR');";
         if((mysqli_query($con,$query))!==false)
         {
-            echo "Records inserted successfully <br>";
+            echo "$query <br>";
      //       echo $ourTeam . " " . $theirTeam;
         } else{
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
         
-        $query = "SELECT FROM Screen;";
+        $query = "SELECT * FROM Screen;";
         
         if ($result){
         echo "1";
