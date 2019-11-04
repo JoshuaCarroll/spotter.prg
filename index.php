@@ -45,6 +45,8 @@ if($con === false){
         if (mysqli_query($con,$query)) {
             echo DELETED;
         }
+        
+        echo $ourTeam;
         $query = "INSERT INTO Screen (Ourteam) VALUES ($ourTeam);";
         if((mysqli_query($con,$query))!==false)
         {
