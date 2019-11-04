@@ -42,18 +42,18 @@ if($con === false){
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
         $query = "DELETE FROM Screen";
-        if (mysqli_query($con,$query)) {
+        if (mysqli_query($conn,$query)) {
             echo DELETED;
         }
         
         echo $ourTeam;
         $query = "INSERT INTO Screen (Ourteam) VALUES ('$ourTeam');";
-        if((mysqli_query($con,$query))!==false)
+        if((mysqli_query($conn,$query))!==false)
         {
             echo "$query <br>";
      //       echo $ourTeam . " " . $theirTeam;
         } else{
-            echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
+            echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($conn) . "<br>";
         }
         
         $query = "SELECT * FROM Screen;";
