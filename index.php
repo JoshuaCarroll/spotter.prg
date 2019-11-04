@@ -57,7 +57,7 @@ if($con === false){
         $row = mysqli_fetch_assoc($result);
         $Screen = $row[0];
   //      echo $test;
- //       echo $Screen;
+        echo $Screen;
 	}
 mysqli_close($conn);
 ?>
