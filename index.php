@@ -55,7 +55,7 @@ if($con === false){
         $result = mysqli_query($con,$query);
   //      echo $result;
         $row = mysql_fetch_array($result,MYSQLI_NUM);
-        $Screen = $row[0];
+//        $Screen = $row[0];
   //      echo $test;
  //       echo $Screen;
 	}
