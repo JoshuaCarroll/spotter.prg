@@ -58,7 +58,7 @@ if($con === false){
         }
         
         $query = "SELECT Ourteam FROM Screen;";
-        
+        $result = mysqli_query($conn,$query);
         if ($result){
         echo "1";
         }
