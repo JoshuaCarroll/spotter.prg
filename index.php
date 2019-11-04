@@ -48,9 +48,9 @@ if($conn === false){
             
         }
         
-        $ourTeam = "This is a test ";
         
-        $query = "INSERT INTO Screen (Ourteam) SELECT $ourteam ;";
+        
+        $query = "UPDATE Screen SET Ourteam = $ourteam ;";
         if((mysqli_query($conn,$query))==false)
         {
             echo "ERROR" . mysqli_error($conn) . "<br>";
