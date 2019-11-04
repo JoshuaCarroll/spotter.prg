@@ -7,7 +7,7 @@ if($con === false)
 }
 else
 {
-    $query="DROP TABLE IF EXIST Screen;";
+    $query="DROP TABLE Screen;";
     if ((mysqli_query($con,$query))!==false) //test for table
     {
         echo "table deleted <br>";    
