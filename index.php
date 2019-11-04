@@ -47,7 +47,7 @@ if($con === false){
         }
         
         echo $ourTeam;
-        $query = "INSERT INTO Screen (Ourteam) VALUES ('$ourTeam');";
+        $query = "INSERT INTO Screen (Ourteam) VALUES ($ourTeam);";
         if((mysqli_query($conn,$query))!==false)
         {
             echo "$query <br>";
@@ -68,7 +68,7 @@ if($con === false){
         echo "3";
         echo $Screen;
 	}
-//mysqli_close($conn);
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
