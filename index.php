@@ -52,7 +52,7 @@ if($con === false){
         }
         $query = "SELECT * FROM Screen;";
         
-        $Screen = mysqli_query($con,$query);
+        $Screen = $con->prepare($query);
         echo $Screen;
 	}
 mysqli_close($conn);
