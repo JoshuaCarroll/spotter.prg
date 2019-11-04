@@ -47,7 +47,7 @@ if($con === false){
         }
         
         echo $ourTeam;
-        $query = "INSERT INTO Screen (Ourteam) VALUES ('11 Dylan Allison WR');";
+        $query = "INSERT INTO Screen (Ourteam) VALUES ('$ourTeam');";
         if((mysqli_query($con,$query))!==false)
         {
             echo "$query <br>";
