@@ -60,14 +60,15 @@ if($con === false){
         $query = "SELECT * FROM Screen;";
         $result = mysqli_query($conn,$query);
         if ($result==true){
-        echo "1";
+        //echo "1";
         }
         $row = mysqli_fetch_array($result);
         if ($row==true){
         $Screen = $row[0];
-        echo "2";}
+        //echo "2";
+        }
         
-        echo "This is the screen " . $Screen;
+        //echo "This is the screen " . $Screen;
 	}
 mysqli_close($conn);
 ?>
