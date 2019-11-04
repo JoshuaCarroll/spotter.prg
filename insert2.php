@@ -8,16 +8,18 @@ if($con === false)
 else
 {
     $query="DROP Screen IF EXIST;";
+    if ((mysqli_query($con,$query))!==false) //test for table
+    {
+        echo "table deleted <br>";    
+    }
+    
     $query="CREATE TABLE Screen(Ourteam VARCHAR(41),Theirteam VARCHAR(41));"; 
     
     if ((mysqli_query($con,$query))!==false) //test for table
     {
         echo "table created <br>";    
     }
-    else
-    {
-        echo "table exists <br>";
-    }
+    
 }
 echo "Finished";
 mysqli_close($con);
