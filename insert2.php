@@ -7,7 +7,7 @@ if($con === false)
 }
 else
 {
-    $query="DROP Screen IF EXIST FROM SpotterDB;";
+    $query="DROP Screen IF EXIST;";
     if ((mysqli_query($con,$query))!==false) //test for table
     {
         echo "table deleted <br>";    
