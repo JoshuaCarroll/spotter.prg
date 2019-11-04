@@ -43,13 +43,13 @@ if($conn === false){
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
         
-        $arr= $ourTeam;
+        $arr[0]= $ourTeam;
         $query = "DELETE FROM Screen";
         if (mysqli_query($conn,$query)) {
             
         }
         
-    
+    echo $arr[0];
         $query = "INSERT INTO Screen (Ourteam) VALUE ('$arr');";
         if((mysqli_query($conn,$query))==false)
         {
