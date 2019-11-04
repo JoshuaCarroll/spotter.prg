@@ -64,7 +64,7 @@ if($con === false){
         }
         $row = mysqli_fetch_assoc($result);
         if ($row){
-        $Screen = $row;
+        $Screen = $row[0];
         echo "2";}
         echo "3";
         echo $Screen;
