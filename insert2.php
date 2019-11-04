@@ -1,12 +1,13 @@
 <?php
 $con = mysqli_connect("localhost","root","21802Ghc<", "SpotterDB");
 // Open db SpotterDB
-if($con === false){
+if($con === false)
+{
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 else
 {
-    $query="CREATE TABLE Screen(Number INT(3),Name VARCHAR(30),Position VARCHAR(8), INDEX (Number));"; 
+    $query="CREATE TABLE Screen(Ourteam VARCHAR(41),Theirteam VARCHAR(41));"; 
     
     if ((mysqli_query($con,$query))!==false) //test for table
     {
