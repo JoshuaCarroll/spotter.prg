@@ -41,9 +41,9 @@ if($con === false){
 		} elseif ($lastCharacter == "-") {
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
-        $query = "DELETE * FROM Screen";
+     //   $query = "DELETE * FROM Screen";
         
-        $query = "INSERT INTO Screen Ourteam VALUES ($ourTeam);";
+        $query = "INSERT INTO Screen (Ourteam) VALUES ($ourTeam);";
         if((mysqli_query($con,$query))!==false)
         {
             echo "Records inserted successfully <br>";
@@ -61,7 +61,7 @@ if($con === false){
         if ($row){
         $Screen = $row[0];
         echo "2";}
-        
+        echo "3";
         echo $Screen;
 	}
 mysqli_close($conn);
