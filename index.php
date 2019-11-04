@@ -41,16 +41,18 @@ if($con === false){
 		} elseif ($lastCharacter == "-") {
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
+        
+        
         $query = "DELETE FROM Screen";
         if (mysqli_query($conn,$query)) {
-            echo DELETED;
+            //echo DELETED;
         }
         
         echo $ourTeam;
-        $query = "INSERT INTO Screen (Ourteam) VALUES ($ourTeam);";
+        $query = "INSERT INTO Screen (Ourteam) VALUES ('$ourTeam');";
         if((mysqli_query($conn,$query))!==false)
         {
-            echo "$query <br>";
+    //        echo "$query <br>";
      //       echo $ourTeam . " " . $theirTeam;
         } else{
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($conn) . "<br>";
