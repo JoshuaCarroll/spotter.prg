@@ -1,4 +1,5 @@
 <?php
+$arr = [5];
 $message = "Didn't Connect";
 $message2 = "Connected";
 // Create connection
@@ -42,14 +43,14 @@ if($con === false){
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
         
-        
+        $arr[0]= $ourTeam;
         $query = "DELETE FROM Screen";
         if (mysqli_query($conn,$query)) {
             
         }
         
     
-        $query = "INSERT INTO Screen (Ourteam) VALUE ('$ourTeam');";
+        $query = "INSERT INTO Screen (Ourteam) VALUE ('$arr');";
         if((mysqli_query($conn,$query))==false)
         {
             echo $theirTeam . "ERROR" . mysqli_error($conn) . "<br>";
