@@ -43,7 +43,7 @@ if($con === false){
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
         
-        $arr[0]= $ourTeam;
+        $arr= $ourTeam;
         $query = "DELETE FROM Screen";
         if (mysqli_query($conn,$query)) {
             
