@@ -47,10 +47,11 @@ if($con === false){
         if((mysqli_query($con,$query))!==false)
         {
             echo "Records inserted successfully <br>";
+            echo $ourTeam . " " . $theirTeam;
         } else{
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
-        $query = "SELECT (Ourteam,Theirteam) FROM Screen;";
+        $query = "SELECT * FROM Screen;";
         $result = mysqli_query($con,$query);
         $Screen = mysql_fetch_row($result);
 //        echo $Screen;
