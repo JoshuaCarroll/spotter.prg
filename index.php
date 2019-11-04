@@ -43,18 +43,18 @@ if($con === false){
 		}
         $query = "DELETE * FROM Screen";
         
-        $query = "INSERT INTO Screen (Ourteam,Theirteam) VALUES ($ourTeam,$theirTeam);";
+        $query = "INSERT INTO Screen (Ourteam) VALUES ($ourTeam);";
         if((mysqli_query($con,$query))!==false)
         {
-            echo "Records inserted successfully <br>";
-            echo $ourTeam . " " . $theirTeam;
+     //       echo "Records inserted successfully <br>";
+     //       echo $ourTeam . " " . $theirTeam;
         } else{
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
-        $query = "SELECT * FROM Screen;";
+        $query = "SELECT (Ourteam) FROM Screen;";
         $result = mysqli_query($con,$query);
-        $Screen = mysql_fetch_row($result);
-//        echo $Screen;
+        $Screen = mysql_fetch_row($result[0]);
+        echo $Screen;
 	}
 //mysqli_close($conn);
 ?>
