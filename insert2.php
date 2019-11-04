@@ -7,6 +7,7 @@ if($con === false)
 }
 else
 {
+    $query="DROP Screen IF EXIST;";
     $query="CREATE TABLE Screen(Ourteam VARCHAR(41),Theirteam VARCHAR(41));"; 
     
     if ((mysqli_query($con,$query))!==false) //test for table
