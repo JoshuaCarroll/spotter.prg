@@ -45,20 +45,19 @@ if($con === false){
         
         $query = "DELETE FROM Screen";
         if (mysqli_query($conn,$query)) {
-            //echo DELETED;
+            
         }
         
-    //    echo $ourTeam;
+    
         $query = "INSERT INTO Screen (Ourteam) VALUES ('11 Dylan Allison WR');";
-        if((mysqli_query($conn,$query))!==false)
+        if((mysqli_query($conn,$query))==false)
         {
-    //        echo "$query <br>";
-     //       echo $ourTeam . " " . $theirTeam;
-        } else{
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($conn) . "<br>";
+        } else{
+            
         }
         
-        $query = "SELECT * FROM Screen;";
+        $query = "SELECT Ourteam FROM Screen;";
         
         if ($result){
         echo "1";
