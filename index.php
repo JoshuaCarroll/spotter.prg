@@ -50,7 +50,7 @@ if($conn === false){
         
         
         
-        $query = "INSERT INTO Screen(Ourteam) VALUE('$ourTeam') ;";
+        $query = "INSERT INTO Screen(Ourteam) VALUE('This is a test -------') ;";
         if((mysqli_query($conn,$query))==false)
         {
             echo "ERROR" . mysqli_error($conn) . "<br>";
