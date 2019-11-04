@@ -31,7 +31,6 @@ if($con === false){
           $name = $row[1];
           $position = $row[2];
         }
-        
 
 		$ourTeam = $_POST["hdnOurTeam"];
 		$theirTeam = $_POST["hdnTheirTeam"];
@@ -42,6 +41,17 @@ if($con === false){
 		} elseif ($lastCharacter == "-") {
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
+        $query = "DELETE * FROM Screen";
+        
+        $query = "INSERT INTO Screen (Ourteam,Theirteam) VALUES ($ourTeam,$theirTeam);";
+        if((mysqli_query($con,$query))!==false)
+        {
+            echo "Records inserted successfully <br>";
+        } else{
+            echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
+        }
+        $query = "SELECT * FROM Screen;";
+        $Screen = mysqli_query($con,$query);
 	}
 mysqli_close($conn);
 ?>
@@ -80,9 +90,10 @@ mysqli_close($conn);
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" >
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
-			<div id="ourTeam"><?= $ourTeam ?></div>
+<!--			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
-    	</form>
+-->         <div id="screen"><?= $Screen ?></div>
+        </form>
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
 		</script>
