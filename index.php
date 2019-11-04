@@ -52,8 +52,10 @@ if($con === false){
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
         
-        $query = "SELECT FROM Screen ;";
-        $result = mysqli_query($con,$query);
+        $query = "SELECT FROM Screen;";
+        if (mysqli_query($con,$query)) {
+            echo DELETED;
+        }
         if ($result){
         echo "1";
         }
