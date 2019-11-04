@@ -49,7 +49,7 @@ if($conn === false){
             
         }
         
-    echo $arr[0];
+    
         $query = "INSERT INTO Screen (Ourteam) VALUE ('$arr');";
         if((mysqli_query($conn,$query))==false)
         {
@@ -63,7 +63,7 @@ if($conn === false){
         }
         $row = mysqli_fetch_array($result);
         if ($row==true){
-        $Screen = $row[0];
+        $Screen = $row[0][0];
         //echo "2";
         }
         
