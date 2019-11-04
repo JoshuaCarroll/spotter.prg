@@ -52,7 +52,7 @@ if($con === false){
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
         
-        $query = "SELECT Ourteam FROM Screen ;";
+        $query = "SELECT FROM Screen ;";
         $result = mysqli_query($con,$query);
         if ($result){
         echo "1";
