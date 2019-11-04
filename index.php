@@ -51,7 +51,9 @@ if($con === false){
             echo $ourTeam . $theirTeam . "ERROR" . mysqli_error($con) . "<br>";
         }
         $query = "SELECT * FROM Screen;";
+        
         $Screen = mysqli_query($con,$query);
+        echo $Screen;
 	}
 mysqli_close($conn);
 ?>
