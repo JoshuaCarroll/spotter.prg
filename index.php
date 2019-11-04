@@ -48,8 +48,8 @@ if($con === false){
             //echo DELETED;
         }
         
-        echo $ourTeam;
-        $query = "INSERT INTO Screen (Ourteam) VALUES ('$ourTeam');";
+    //    echo $ourTeam;
+        $query = "INSERT INTO Screen (Ourteam) VALUES ('11 Dylan Allison WR');";
         if((mysqli_query($conn,$query))!==false)
         {
     //        echo "$query <br>";
