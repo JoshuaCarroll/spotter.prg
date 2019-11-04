@@ -53,9 +53,9 @@ if($con === false){
         $query = "SELECT (Ourteam,Theirteam) FROM Screen;";
         $result = mysqli_query($con,$query);
         $Screen = mysql_fetch_row($result);
-        echo $Screen;
+//        echo $Screen;
 	}
-mysqli_close($conn);
+//mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
