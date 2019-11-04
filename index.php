@@ -5,7 +5,7 @@ $message2 = "Connected";
 // Create connection
 
 $conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
-if($con === false){
+if($conn === false){
     echo "<script type='text/javascript'>alert('$message');</script>";}
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
@@ -53,7 +53,7 @@ if($con === false){
         $query = "INSERT INTO Screen (Ourteam) VALUE ('$arr');";
         if((mysqli_query($conn,$query))==false)
         {
-            echo $theirTeam . "ERROR" . mysqli_error($conn) . "<br>";
+            echo "ERROR" . mysqli_error($conn) . "<br>";
         }
         
         $query = "SELECT * FROM Screen;";
