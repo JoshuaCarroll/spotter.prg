@@ -62,7 +62,7 @@ if($con === false){
         if ($result==true){
         echo "1";
         }
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_array($result);
         if ($row==true){
         $Screen = $row[0];
         echo "2";}
