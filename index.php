@@ -42,31 +42,8 @@ if($conn === false){
 		} elseif ($lastCharacter == "-") {
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
+
         
-        $query = "DELETE FROM Screen";
-        if (mysqli_query($conn,$query)) {
-            
-        }
-        
-        
-        $query = "INSERT INTO `Screen` (`Ourteam`, `Theirteam`) VALUES ('$ourTeam', NULL) ;";
-        if((mysqli_query($conn,$query))==false)
-        {
-            echo "ERROR" . mysqli_error($conn) . "<br>";
-        }
-        
-        $query = "SELECT * FROM Screen;";
-        $result = mysqli_query($conn,$query);
-        if ($result==true){
-        //echo "1";
-        }
-        $row = mysqli_fetch_array($result);
-        if ($row==true){
-        $Screen = $row[0];
-        //echo "2";
-        }
-        
-        echo "This is the screen " . $Screen;
 	}
 mysqli_close($conn);
 ?>
@@ -105,9 +82,9 @@ mysqli_close($conn);
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" >
 			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
 			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
-<!--			<div id="ourTeam"><?= $ourTeam ?></div>
+			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
--->         <div id="screen"><?= $Screen ?></div>
+
         </form>
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
