@@ -55,7 +55,7 @@ if($conn === false){
         $query = "INSERT INTO `Screen` (`Ourteam`, `Theirteam`) VALUES ('$ourTeam', NULL) ;";
         if((mysqli_query($conn,$query))==false)
         {
-            echo "ERROR" . mysqli_error($conn) . "<br>";
+            //echo "ERROR" . mysqli_error($conn) . "<br>";
         }
         
         $query = "SELECT * FROM Screen;";
@@ -69,7 +69,7 @@ if($conn === false){
         //echo "2";
         }
         
-        //echo "This is the screen " . $Screen;
+        echo "This is the screen " . $Screen;
 	}
 mysqli_close($conn);
 ?>
