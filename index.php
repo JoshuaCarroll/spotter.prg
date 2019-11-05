@@ -49,13 +49,10 @@ if($conn === false){
         }
         
         
-        echo $ourTeam;
-        echo $theirTeam;
-        
         $query = "INSERT INTO `Screen` (`Ourteam`, `Theirteam`) VALUES ('$ourTeam', NULL) ;";
         if((mysqli_query($conn,$query))==false)
         {
-            //echo "ERROR" . mysqli_error($conn) . "<br>";
+            echo "ERROR" . mysqli_error($conn) . "<br>";
         }
         
         $query = "SELECT * FROM Screen;";
