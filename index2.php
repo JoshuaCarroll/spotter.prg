@@ -59,10 +59,8 @@ else {
                         echo mysqli_error_list;
                     }else{
                         if ($row[1]=="+"){
-                            echo "Our Team" . $row[1];
                             $ourTeam = $row[0];}
                         elseif ($row[1]=="-"){
-                            echo "Their Team";
                             $theirTeam = $row[0];
                         }
                             
