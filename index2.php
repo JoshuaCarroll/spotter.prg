@@ -49,16 +49,16 @@ else {
 				echo "ERROR" . mysqli_error($conn) . "<br>";
 			}
             $query = "SELECT * FROM Screen;";
+            $result = mysqli_query($conn,$query);    
+            while ($row = mysqli_fetch_assoc($result)){
                 
-            while ($result = mysqli_query($conn,$query)){
-                $row = mysqli_fetch_assoc($result);
                 
-      //          if ($row['team']=="+"){
-        //            $ourTeam = $row['player'];
-            //    }
-          //      elseif ($row['team']=="-"){
-            //        $theirTeam = $row['player'];
-              //  }
+                if ($row['team']=="+"){
+                    $ourTeam = $row['player'];
+                }
+                elseif ($row['team']=="-"){
+                    $theirTeam = $row['player'];
+                }
                 
             }
         }
