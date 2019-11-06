@@ -51,17 +51,15 @@ else {
             $query = "SELECT * FROM Screen;";
                 
             while ($result = mysqli_query($conn,$query)){
-                $row = mysqli_fetch_array($result,MYSQLI_NUM);
-                if ($row==false) {
-                    echo mysqli_error;
-                }else{
-                    if ($row[1]=="+"){
-                        $ourTeam = $row[0];
-                    }
-                    elseif ($row[1]=="-"){
-                        $theirTeam = $row[0];
-                    }
+                $row = mysqli_fetch_assoc($result);
+                
+                if ($row['team']=="+"){
+                    $ourTeam = $row['player'];
                 }
+                elseif ($row['team']=="-"){
+                    $theirTeam = $row['player'];
+                }
+                
             }
         }
 	}
