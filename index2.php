@@ -39,7 +39,7 @@ else {
 				$name = $row[1];
 				$position = $row[2];
 			}
-// There is something in $playerDiv that causes and error
+
 			$playerDiv = "<div class=\'player\'><span class=\'jerseyNumber\'>" . $jerseyNumber . "</span> <span class=\'name\'>" . $name . "</span> <span class=\'position\'>" . $position . "</span></div>";
             
 			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
@@ -48,22 +48,18 @@ else {
 			{
 				echo "ERROR" . mysqli_error($conn) . "<br>";
 			}
-            else {
-                $query = "SELECT * FROM Screen;";
+            $query = "SELECT * FROM Screen;";
                 
-                while (($result = mysqli_query($conn,$query)) !== false){
-                    $row = mysqli_fetch_array($result,MYSQLI_NUM);
-                    if ($row==false) {
-                        echo mysqli_error;
-                    }else{
-                        if ($row[1]=="+"){
-                            $ourTeam = $row[0];
-                        }
-                        elseif ($row[1]=="-"){
-                            $theirTeam = $row[0];
-                        }
-                            
-                    
+            while (($result = mysqli_query($conn,$query)) !== false){
+                $row = mysqli_fetch_array($result,MYSQLI_NUM);
+                if ($row==false) {
+                    echo mysqli_error;
+                }else{
+                    if ($row[1]=="+"){
+                        $ourTeam = $row[0];
+                    }
+                    elseif ($row[1]=="-"){
+                        $theirTeam = $row[0];
                     }
                 }
             }
