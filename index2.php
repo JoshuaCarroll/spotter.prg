@@ -58,7 +58,12 @@ else {
                     if ($row==false) {
                         echo mysqli_error_list;
                     }else{
-                        $ourTeam = $row[0];
+                        if ($row[1]="+"){
+                            $ourTeam = $row[0];}
+                        elseif ($row[1]="-"){
+                            $theirTeam = $row[0];
+                        }
+                            
                     
                     }
                 }
