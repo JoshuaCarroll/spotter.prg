@@ -40,24 +40,25 @@ else {
 			}
 		
 			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
-			
+			echo $playerDiv;
 			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ($playerDiv, $lastCharacter) ;";
         
 			if((mysqli_query($conn,$query))==false)
 			{
-				echo "ERROR" . mysqli_error($conn) . "<br>";
+				//echo "ERROR" . mysqli_error($conn) . "<br>";
 			}
-        
-			$query = "SELECT * FROM Screen;";
-			$result = mysqli_query($conn,$query);
-			if ($result==true){
-				//echo "1";
-			}
-			$row = mysqli_fetch_array($result);
-			if ($row==true) {
-				$Screen = $row[0];
-				//echo "2";
-			}
+            else {
+                $query = "SELECT * FROM Screen;";
+                $result = mysqli_query($conn,$query);
+                if ($result==true){
+                    //echo "1";
+                }
+                $row = mysqli_fetch_array($result);
+                if ($row==true) {
+                    $Screen = $row[0];
+                    //echo "2";
+                }
+            }
         }
 	}
 	
