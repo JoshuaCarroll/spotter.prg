@@ -54,10 +54,11 @@ else {
                 while (mysqli_query($conn,$query) !== false){
                     $row = mysqli_fetch_array($result,MYSQLI_NUM);
                     if ($row==false) {
-                        echo mysqli_error_list;
+                        echo mysqli_error;
                     }else{
                         if ($row[1]=="+"){
-                            $ourTeam = $row[0];}
+                            $ourTeam = $row[0];
+                        }
                         elseif ($row[1]=="-"){
                             $theirTeam = $row[0];
                         }
