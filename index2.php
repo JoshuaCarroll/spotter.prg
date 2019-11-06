@@ -64,9 +64,9 @@ else {
 	
 	// Now load the data from screen table
     $query = "SELECT player FROM screen WHERE team = '+';";
-    $ourTeam = mysql_fetch_object($query);
+    $ourTeam = mysql_fetch_object($conn,$query);
     $query = "SELECT player FROM screen WHERE team = '-';";
-	$theirTeam = mysql_client_encoding($query); 
+	$theirTeam = mysql_client_encoding($conn,$query); 
 	mysqli_close($conn);
 }
 ?>
