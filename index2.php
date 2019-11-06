@@ -50,8 +50,8 @@ else {
 			}
             else {
                 $query = "SELECT * FROM Screen;";
-                $result = mysqli_query($conn,$query);
-                while ($result!==false){
+                
+                while (mysqli_query($conn,$query) !== false){
                     $row = mysqli_fetch_array($result,MYSQLI_NUM);
                     if ($row==false) {
                         echo mysqli_error_list;
