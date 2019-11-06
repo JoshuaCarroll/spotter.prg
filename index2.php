@@ -40,7 +40,7 @@ else {
 				$position = $row[2];
 			}
 // There is something in $playerDiv that causes and error
-			$playerDiv = "%lt;div class='player'>%lt;span class='jerseyNumber'>" . $jerseyNumber . "%lt;/span> <span class='name'%lt;" . $name . "</span%lt; <span class='position'%lt;" . $position . "</span%lt;</div%lt;";
+			$playerDiv = "%lt;div class=\'player\'>%lt;span class=\'jerseyNumber\'>" . $jerseyNumber . "%lt;/span> <span class=\'name\'%lt;" . $name . "</span%lt; <span class=\'position\'%lt;" . $position . "</span%lt;</div%lt;";
             
 			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
         
