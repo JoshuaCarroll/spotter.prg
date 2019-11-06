@@ -52,28 +52,18 @@ else {
                 $query = "SELECT * FROM Screen;";
                 $result = mysqli_query($conn,$query);
                 if ($result==true){
-                    //echo "1";
+                    echo "1";
                 }
                 $row = mysqli_fetch_array($result,MYSQL_NUM);
                 if ($row==true) {
-                    $Screen = $row[0];
-                    //echo "2";
+                    $ourTeam = $row[0];
+                    echo "2";
                 }
             }
         }
 	}
 	
 	// Now load the data from screen table
-    $query = "SELECT * FROM screen WHERE team = '+';";
-    $result = mysqli_query($conn,$query);
-    if (result == true){
-        $array = mysqli_fetch_array($result);
-        $ourTeam = $array[0];
-        echo $array[0];
-        echo "1";
-    }else{
-        echo mysqli_error_list;
-    }
     
     
     
