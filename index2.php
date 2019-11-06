@@ -46,7 +46,7 @@ else {
         
 			if((mysqli_query($conn,$query))==false)
 			{
-				//echo "ERROR" . mysqli_error($conn) . "<br>";
+				echo "ERROR" . mysqli_error($conn) . "<br>";
 			}
             else {
                 $query = "SELECT * FROM Screen;";
