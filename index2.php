@@ -41,7 +41,7 @@ else {
 		
 			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
 			
-			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
+			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('This is a test', '+') ;";
         
 			if((mysqli_query($conn,$query))==false)
 			{
