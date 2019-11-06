@@ -40,10 +40,10 @@ else {
 				$position = $row[2];
 			}
 // There is something in $playerDiv that causes and error
-			$playerDiv = "&lt;div class&#61\'player\'>&lt;span class=\'jerseyNumber\'>" . $jerseyNumber . "&lt;/span> &lt;span class=\'name\'>" . $name . "&lt;/span> &lt;span class=\'position\'>" . $position . "&lt;/span>&lt;/div>";
+			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
             
 			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
-            
+        
 			if((mysqli_query($conn,$query))==false)
 			{
 				echo "ERROR" . mysqli_error($conn) . "<br>";
