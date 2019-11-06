@@ -41,12 +41,12 @@ else {
 			}
 // There is something in $playerDiv that causes and error
 			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
-            
+            echo htmlspecialchars($playerDiv);
 			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES (htmlspecialchars($playerDiv), '$lastCharacter') ;";
         
 			if((mysqli_query($conn,$query))==false)
 			{
-				echo "ERROR" . mysqli_error($conn) . "<br>";
+				//echo "ERROR" . mysqli_error($conn) . "<br>";
 			}
             else {
                 $query = "SELECT * FROM Screen;";
