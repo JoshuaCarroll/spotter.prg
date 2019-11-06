@@ -59,8 +59,10 @@ else {
                         echo mysqli_error_list;
                     }else{
                         if ($row[1]="+"){
+                            echo "Our Team"
                             $ourTeam = $row[0];}
                         elseif ($row[1]="-"){
+                            echo "Their Team";
                             $theirTeam = $row[0];
                         }
                             
@@ -75,8 +77,7 @@ else {
     
     
     
-    //$query = "SELECT player FROM screen WHERE team = '-';";
-	//$theirTeam = mysql_client_encoding($conn,$query); 
+
 	mysqli_close($conn);
 }
 ?>
