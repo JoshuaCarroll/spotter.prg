@@ -2,73 +2,72 @@
 $arr = [5];
 $message = "Didn't Connect";
 $message2 = "Connected";
+$query = "";
 // Create connection
 
 $conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
-if($conn === false){
-    echo "<script type='text/javascript'>alert('$message');</script>";}
+if($conn === false) {
+    echo "<script type='text/javascript'>alert('Didn't connect');</script>";
+}
+else {
 	if (!empty($_POST)) { // Checks to see if it received a form submission
-		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
-		$lastCharacter = substr($_POST["jerseyNumber"], -1);
-        if ($lastCharacter == "+") // Test for Bruin
-        {
-          // call the data for $jerseyNumber
-          $query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
-          $results = mysqli_query($conn,$query);
-          // create an array of the data for player $jerseyNumber
-          $row=mysqli_fetch_array($results,MYSQLI_NUM);
-          //Read the name and position
-          $name = $row[1];
-          $position = $row[2];
-        }
-        if ($lastCharacter == "-") // test for Opposition
-        {
-          // call the data for $jerseyNumber
-          $query = "SELECT * FROM ORoster WHERE Number=$jerseyNumber;";
-          $results = mysqli_query($conn,$query);
-          // create an array of the data for player $jerseyNumber
-          $row=mysqli_fetch_array($results,MYSQLI_NUM);
-          //Read the name and position
-          $name = $row[1];
-          $position = $row[2];
-        }
-
-		$ourTeam = $_POST["hdnOurTeam"];
-		$theirTeam = $_POST["hdnTheirTeam"];
-		$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
-		if ($lastCharacter == "+") {
-			
-			$ourTeam = $_POST["hdnOurTeam"] . $playerDiv;
-		} elseif ($lastCharacter == "-") {
-			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
+		if ($_POST["jerseyNumber"] == "clear") {
+			mysqli_query($conn,"Delete from Screen");
 		}
+		else {
+			$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
+			$lastCharacter = substr($_POST["jerseyNumber"], -1);
+		
+        	if ($lastCharacter == "+") { // Test for Bruin
+				// call the data for $jerseyNumber
+				$query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
+				$results = mysqli_query($conn,$query);
+				// create an array of the data for player $jerseyNumber
+				$row=mysqli_fetch_array($results,MYSQLI_NUM);
+				//Read the name and position
+				$name = $row[1];
+				$position = $row[2];
+			}
+        	if ($lastCharacter == "-") { // test for Opposition
+				// call the data for $jerseyNumber
+				$query = "SELECT * FROM ORoster WHERE Number=$jerseyNumber;";
+				$results = mysqli_query($conn,$query);
+				// create an array of the data for player $jerseyNumber
+				$row=mysqli_fetch_array($results,MYSQLI_NUM);
+				//Read the name and position
+				$name = $row[1];
+				$position = $row[2];
+			}
+		
+			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
+			
+			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ($playerDiv, $lastCharacter) ;";
         
-        $query = "DELETE FROM Screen";
-        if (mysqli_query($conn,$query)) {
-            
+			if((mysqli_query($conn,$query))==false)
+			{
+				echo "ERROR" . mysqli_error($conn) . "<br>";
+			}
+        
+			$query = "SELECT * FROM Screen;";
+			$result = mysqli_query($conn,$query);
+			if ($result==true){
+				//echo "1";
+			}
+			$row = mysqli_fetch_array($result);
+			if ($row==true) {
+				$Screen = $row[0];
+				//echo "2";
+			}
         }
-        
-        
-        $query = "INSERT INTO `Screen` (`Ourteam`, `Theirteam`) VALUES ('$ourTeam', NULL) ;"; //this works with "this is a test" but not with a variable 
-        if((mysqli_query($conn,$query))==false)
-        {
-            echo "ERROR" . mysqli_error($conn) . "<br>";
-        }
-        
-        $query = "SELECT * FROM Screen;";
-        $result = mysqli_query($conn,$query);
-        if ($result==true){
-        //echo "1";
-        }
-        $row = mysqli_fetch_array($result);
-        if ($row==true){
-        $Screen = $row[0];
-        //echo "2";
-        }
-        
-        echo "This is the screen " . $Screen;
 	}
-mysqli_close($conn);
+	
+	// Now load the data from screen table
+	// $ourTeam = Select player from screen where team = '+'
+	// $theirTeam = Select player from screen where team = '-'
+	// That's all
+	
+	mysqli_close($conn);
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,12 +83,8 @@ mysqli_close($conn);
                     form1.submit();
                     event.preventDefault();
                 }
-				else if (key == 13) { //Carriage return
-					document.getElementById("ourTeam").innerHTML = "";
-					document.getElementById("theirTeam").innerHTML = "";
-					document.getElementById("hdnOurTeam").value = "";
-					document.getElementById("hdnTheirTeam").value = "";
-                    //document.getElementById("jerseyNumber").value = "";
+				else if (key == 13) { //Carriage return, send command to clear database
+					document.getElementById("jerseyNumber").value == "clear";
                 }
 				else {
                     console.log(key);
@@ -103,11 +98,8 @@ mysqli_close($conn);
     <body id="element">
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;" >
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" >
-			<input type="hidden" id="hdnOurTeam" name="hdnOurTeam" value="<?= $ourTeam ?>">
-			<input type="hidden" id="hdnTheirTeam" name="hdnTheirTeam" value="<?= $theirTeam ?>">
-<!--			<div id="ourTeam"><?= $ourTeam ?></div>
+			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
--->         <div id="screen"><?= $Screen ?></div>
         </form>
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
