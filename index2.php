@@ -12,7 +12,7 @@ if($conn === false) {
 }
 else {
 	if (!empty($_POST)) { // Checks to see if it received a form submission
-		if ($_POST["jerseyNumber"] == "clear") {
+		if (($_POST["jerseyNumber"]) == "clear") {
             
 			mysqli_query($conn,"DROP TABLE Screen;");
 		}
