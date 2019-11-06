@@ -13,7 +13,7 @@ if($conn === false) {
 else {
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		if ($_POST["jerseyNumber"] == "clear") {
-            echo $_POST["jerseyNumber"];
+            
 			mysqli_query($conn,"DROP TABLE Screen;");
 		}
 		else {
@@ -55,10 +55,10 @@ else {
                 
                 
                 if ($row['team']=="+"){
-                    $ourTeam = $row['player'];
+                    $ourTeam = $row['player'] . $ourTeam;
                 }
                 elseif ($row['team']=="-"){
-                    $theirTeam = $row['player'];
+                    $theirTeam = $row['player'] . $theirTeam;
                 }
                 
             }
