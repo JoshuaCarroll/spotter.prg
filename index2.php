@@ -51,9 +51,7 @@ else {
             else {
                 $query = "SELECT * FROM Screen;";
                 $result = mysqli_query($conn,$query);
-                if ($result==false){
-                    echo mysqli_error_list;
-                }else{
+                while ($result!==false){
                     $row = mysqli_fetch_array($result,MYSQLI_NUM);
                     if ($row==false) {
                         echo mysqli_error_list;
