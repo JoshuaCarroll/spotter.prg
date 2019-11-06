@@ -49,7 +49,7 @@ if($conn === false){
         }
         
         
-        $query = "INSERT INTO `Screen` (`Ourteam`, `Theirteam`) VALUES ('$ourTeam', NULL) ;";
+        $query = "INSERT INTO `Screen` (`Ourteam`, `Theirteam`) VALUES ('$ourTeam', NULL) ;"; //this works with "this is a test" but not with a variable 
         if((mysqli_query($conn,$query))==false)
         {
             echo "ERROR" . mysqli_error($conn) . "<br>";
