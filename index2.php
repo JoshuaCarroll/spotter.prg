@@ -54,7 +54,7 @@ else {
                 if ($result==true){
                     //echo "1";
                 }
-                $row = mysqli_fetch_array($result);
+                $row = mysqli_fetch_array($result,MYSQL_NUM);
                 if ($row==true) {
                     $Screen = $row[0];
                     //echo "2";
