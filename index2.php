@@ -40,12 +40,12 @@ else {
 			}
 		
 			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
-			echo $playerDiv;
+			
 			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ($playerDiv, $lastCharacter) ;";
         
 			if((mysqli_query($conn,$query))==false)
 			{
-				//echo "ERROR" . mysqli_error($conn) . "<br>";
+				echo "ERROR" . mysqli_error($conn) . "<br>";
 			}
             else {
                 $query = "SELECT * FROM Screen;";
