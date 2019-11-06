@@ -17,7 +17,7 @@ else
         echo $query . "Error";
     }
     
-    $query="CREATE TABLE Screen(player VARCHAR(100),team VARCHAR(1));"; 
+    $query="CREATE TABLE Screen(player VARCHAR(1000),team VARCHAR(1));"; 
     
     if ((mysqli_query($con,$query))!==false) //test for table
     {
