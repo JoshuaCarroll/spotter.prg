@@ -100,6 +100,7 @@ else {
 			
 
 		</script>
+        <meta http-equiv="refresh" content="3" >
     </head>
     <body id="element">
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;" >
