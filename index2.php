@@ -41,6 +41,7 @@ else {
 			}
 		
 			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
+            echo $playerDiv;
 			$playerDiv = "11 Dylan Allison WR";
 			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '+') ;";
         
