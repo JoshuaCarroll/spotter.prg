@@ -53,12 +53,12 @@ else {
             while ($result = mysqli_query($conn,$query)){
                 $row = mysqli_fetch_assoc($result);
                 
-                if ($row['team']=="+"){
-                    $ourTeam = $row['player'];
-                }
-                elseif ($row['team']=="-"){
-                    $theirTeam = $row['player'];
-                }
+      //          if ($row['team']=="+"){
+        //            $ourTeam = $row['player'];
+            //    }
+          //      elseif ($row['team']=="-"){
+            //        $theirTeam = $row['player'];
+              //  }
                 
             }
         }
