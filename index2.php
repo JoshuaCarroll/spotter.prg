@@ -42,8 +42,7 @@ else {
 // There is something in $playerDiv that causes and error
 			$playerDiv = "<div class='player'><span class='jerseyNumber'>" . $jerseyNumber . "</span> <span class='name'>" . $name . "</span> <span class='position'>" . $position . "</span></div>";
             
-			$playerDiv = "11 Dylan Allison WR";
-			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
+			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('htmlspecialchars($playerDiv)', '$lastCharacter') ;";
         
 			if((mysqli_query($conn,$query))==false)
 			{
