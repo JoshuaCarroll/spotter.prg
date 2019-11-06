@@ -51,13 +51,16 @@ else {
             else {
                 $query = "SELECT * FROM Screen;";
                 $result = mysqli_query($conn,$query);
-                if ($result==true){
-                    echo "1";
-                }
-                $row = mysqli_fetch_array($result,MYSQLI_NUM);
-                if ($row==true) {
-                    $ourTeam = $row[0];
-                    echo "2";
+                if ($result==false){
+                    echo mysqli_error_list;
+                }else{
+                    $row = mysqli_fetch_array($result,MYSQLI_NUM);
+                    if ($row==false) {
+                        echo mysqli_error_list;
+                    }else{
+                        $ourTeam = $row[0];
+                    
+                    }
                 }
             }
         }
