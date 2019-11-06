@@ -1,5 +1,5 @@
 <?php
-$arr = [5];
+
 $message = "Didn't Connect";
 $message2 = "Connected";
 // Create connection
@@ -42,8 +42,6 @@ if($conn === false){
 		} elseif ($lastCharacter == "-") {
 			$theirTeam = $_POST["hdnTheirTeam"] . $playerDiv;
 		}
-
-        
 	}
 mysqli_close($conn);
 ?>
