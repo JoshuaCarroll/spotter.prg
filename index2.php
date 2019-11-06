@@ -70,6 +70,7 @@ else {
         $array = mysqli_fetch_array($result);
         $ourTeam = $array[0];
         echo $array[0];
+        echo "1";
     }else{
         echo mysqli_error_list;
     }
