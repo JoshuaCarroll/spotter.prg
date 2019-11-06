@@ -88,7 +88,7 @@ else {
                     event.preventDefault();
                 }
 				else if (key == 13) { //Carriage return, send command to clear database
-					document.getElementById("jerseyNumber").value == "clear";
+					document.SetElementValue("jerseyNumber","clear");
                 }
 				else {
                     console.log(key);
