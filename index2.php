@@ -65,7 +65,7 @@ else {
 	// Now load the data from screen table
     $query = "SELECT * FROM screen WHERE team = '+';";
     $result = mysqli_query($conn,$query);
-//    $array = mysql_fetch_row($result);
+    $array = mysqli_fetch_row($result);
 //    $ourTeam = $array[0];
     
     
