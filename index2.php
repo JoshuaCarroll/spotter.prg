@@ -54,7 +54,7 @@ else {
                 if ($result==true){
                     echo "1";
                 }
-                $row = mysqli_fetch_array($result,MYSQL_NUM);
+                $row = mysqli_fetch_array($result,MYSQLI_NUM);
                 if ($row==true) {
                     $ourTeam = $row[0];
                     echo "2";
