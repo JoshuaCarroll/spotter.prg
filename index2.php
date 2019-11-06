@@ -3,6 +3,7 @@ $arr = [5];
 $message = "Didn't Connect";
 $message2 = "Connected";
 $query = "";
+$playerDiv = "";
 // Create connection
 
 $conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
