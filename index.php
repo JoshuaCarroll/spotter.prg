@@ -42,28 +42,30 @@ else {
 			}
 
 			$playerDiv = "<div class=\'player\'><span class=\'jerseyNumber\'>" . $jerseyNumber . "</span> <span class=\'name\'>" . $name . "</span> <span class=\'position\'>" . $position . "</span></div>";
-            
-			$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
-        
-			if((mysqli_query($conn,$query))==false)
-			{
-				echo "ERROR" . mysqli_error($conn) . "<br>";
-			}
-            $query = "SELECT * FROM Screen;";
-            $result = mysqli_query($conn,$query);    
-            while ($row = mysqli_fetch_assoc($result)){
-                
-                
-                if ($row['team']=="+"){
-                    $ourTeam = $row['player'] . $ourTeam;
-                }
-                elseif ($row['team']=="-"){
-                    $theirTeam = $row['player'] . $theirTeam;
-                }
-                
+            $query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
+
+            if((mysqli_query($conn,$query))==false)
+            {
+                echo "ERROR" . mysqli_error($conn) . "<br>";
             }
+			
+        } //End of _POST
+	
+        
+        $query = "SELECT * FROM Screen;";
+        $result = mysqli_query($conn,$query);    
+        while ($row = mysqli_fetch_assoc($result)){
+
+
+            if ($row['team']=="+"){
+                $ourTeam = $row['player'] . $ourTeam;
+            }
+            elseif ($row['team']=="-"){
+                $theirTeam = $row['player'] . $theirTeam;
+            }
+
         }
-	}
+    }
 	
 	// add ck box lable refresh on by default in JS below ck box set timeout 3sec  windows.set.timeout if ck box check  then windows refresh
     
@@ -108,12 +110,12 @@ else {
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
         </form>
-		<script type="text/javascript">
+<!--		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
             var myVar = setInterval(myTimer, 3000);
             function myTimer() {
                 form1.submit();
-            }
+            }-->
 		</script>
 	</body>
 
