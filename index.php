@@ -110,12 +110,12 @@ else {
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
         </form>
-<!--		<script type="text/javascript">
+		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
-            var myVar = setInterval(myTimer, 3000);
-            function myTimer() {
-                form1.submit();
-            }-->
+        //    var myVar = setInterval(myTimer, 3000);
+        //    function myTimer() {
+        //        form1.submit();
+            }
 		</script>
 	</body>
 
