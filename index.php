@@ -107,8 +107,9 @@ else {
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" />
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
-            <input type="checkbox" name="refresh" id="refresh" value = "refreshPage" checked />
+            
         </form>
+        <input type="checkbox" name="refresh" id="refresh" value = "refreshPage" checked />
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
             
