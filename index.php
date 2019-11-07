@@ -119,6 +119,7 @@ else {
                 var myVar = setInterval(myTimer, 3000);
                 function myTimer() {
                     document.getElementById("refresh").value = "refreshPage";
+                    form1.submit();
                 }
             }
 		</script>
