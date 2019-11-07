@@ -1,7 +1,4 @@
 <?php
-$arr = [5];
-$message = "Didn't Connect";
-$message2 = "Connected";
 $query = "";
 $playerDiv = "";
 // Create connection
@@ -50,22 +47,23 @@ else {
             }
 			
         } //End of _POST
-	
-        
-        $query = "SELECT * FROM Screen;";
-        $result = mysqli_query($conn,$query);    
-        while ($row = mysqli_fetch_assoc($result)){
+// Refresh Screen	
+        if (($_POST["refresh"]) == "refreshPage"){
+            $query = "SELECT * FROM Screen;";
+            $result = mysqli_query($conn,$query);    
+            while ($row = mysqli_fetch_assoc($result)){
+                if ($row['team']=="+"){
+                    $ourTeam = $row['player'] . $ourTeam;
+                }
+                elseif ($row['team']=="-"){
+                    $theirTeam = $row['player'] . $theirTeam;
+                }
 
-
-            if ($row['team']=="+"){
-                $ourTeam = $row['player'] . $ourTeam;
             }
-            elseif ($row['team']=="-"){
-                $theirTeam = $row['player'] . $theirTeam;
-            }
-
         }
+    //end Data Base load
     }
+    
 	
 	// add ck box lable refresh on by default in JS below ck box set timeout 3sec  windows.set.timeout if ck box check  then windows refresh
     
@@ -106,16 +104,22 @@ else {
     </head>
     <body id="element">
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;" >
-			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" >
+			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" />
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
+            <input type="checkbox" name="refresh" id="refresh" value = "refreshPage" checked />
         </form>
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
-        //    var myVar = setInterval(myTimer, 3000);
-        //    function myTimer() {
-        //        form1.submit();
-        //    }
+            
+            document.getElementById("refresh").value = "";
+            if (document.getElementById("refresh").checked = true) {
+                
+                var myVar = setInterval(myTimer, 3000);
+                function myTimer() {
+                    document.getElementById("refresh").value = "refreshPage";
+                }
+            }
 		</script>
 	</body>
 
