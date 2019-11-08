@@ -39,7 +39,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
 
 		mysqli_query($conn,$query);  
-        document.getElementById("refresh").checked = false;
+        
 	}
 } // no... THIS.. is the end of POST
 
@@ -100,7 +100,7 @@ mysqli_close($conn);
         
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
-            //document.getElementById("refresh").checked = true;
+            
             var refreshInterval = setInterval(refreshInterval_tick, 3000);
 			
 			function refreshInterval_tick() {
