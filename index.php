@@ -103,14 +103,14 @@ mysqli_close($conn);
 			document.getElementById("jerseyNumber").focus();
              
             var refreshInterval = setInterval(refreshInterval_tick, 3000);
-			if ($boxChecked=true) {
+			
                 function refreshInterval_tick() {
                     if (document.getElementById("refresh").checked) {
                         location.reload();
                         $boxChecked = true;
                     }
                 }
-			}
+			
 		</script>
 	</body>
 
