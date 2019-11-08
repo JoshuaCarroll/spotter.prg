@@ -3,7 +3,7 @@ $query = "";
 $playerDiv = "";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
+$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 if($conn === false) {
     echo "<script type='text/javascript'>alert('Didn't connect');</script>";
 }
@@ -121,6 +121,7 @@ else {
                     document.getElementById("refresh").value = "refreshPage";
                     form1.submit();
                 }
+                
             }
 		</script>
 	</body>
