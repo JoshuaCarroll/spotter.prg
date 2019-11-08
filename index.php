@@ -96,7 +96,7 @@ mysqli_close($conn);
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
 			<label for="refresh">Auto refresh</label>
-            <input type="checkbox" name="refresh" id="refresh" checked />
+            <!--<input type="checkbox" name="refresh" id="refresh" checked />-->
         </form>
         
 		<script type="text/javascript">
@@ -105,9 +105,9 @@ mysqli_close($conn);
             var refreshInterval = setInterval(refreshInterval_tick, 3000);
 			if ($boxChecked=true) {
                 function refreshInterval_tick() {
-                    if (document.getElementById("refresh").checked) {
+                    //f (document.getElementById("refresh").checked) {
                         location.reload();
-                        $boxChecked = true;
+                    //    $boxChecked = true;
                     }
                 }
 			}
