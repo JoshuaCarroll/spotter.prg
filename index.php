@@ -41,7 +41,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
 
-		mysqli_query($conn,$query));  // Let this show the error
+		mysqli_query($conn,$query);  // Let this show the error
 		//if((mysqli_query($conn,$query))==false) {
 		//	echo "ERROR" . mysqli_error($conn) . "<br>";
 		//}
