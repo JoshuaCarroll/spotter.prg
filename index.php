@@ -1,19 +1,18 @@
 <?php
 $query = "";
 $playerDiv = "";
-$refreshInterval = "checked";
+ $refreshInterval = "checked";
 // Create connection
 
 $conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
 
 if (!empty($_POST)) { // Checks to see if it received a form submission
+    $refreshInterval = ""; // Clear this because this person is entering values
 	if (($_POST["jerseyNumber"]) == "clear") {
 		mysqli_query($conn,"Delete * from Screen");
-		$refreshInterval = ""; // Clear this because this person is entering values
+		
 	}
 	else {
-		$refreshInterval = ""; // Clear this because this person is entering values
-		
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
 
@@ -49,6 +48,7 @@ $theirTeam = "";
 
 $query = "SELECT * FROM Screen";
 $result = mysqli_query($conn,$query);    
+echo ("Test Test Test");
 while ($row = mysqli_fetch_assoc($result)) {
 	if ($row['team']=="+") {
 		$ourTeam = $ourTeam . $row['player'];  // Add the lastest to the END, not the beginning
@@ -92,7 +92,8 @@ mysqli_close($conn);
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" />
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
-			<label for="refresh">Auto refresh</label><input type="checkbox" name="refresh" id="refresh" <?= $refreshInterval ?> />
+			<label for="refresh">Auto refresh</label>
+            <input type="checkbox" name="refresh" id="refresh" />
         </form>
         
 		<script type="text/javascript">
