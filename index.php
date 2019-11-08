@@ -100,7 +100,7 @@ mysqli_close($conn);
         
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
-            document.getElementById("refresh").checked = true;
+            //document.getElementById("refresh").checked = true;
             var refreshInterval = setInterval(refreshInterval_tick, 3000);
 			
 			function refreshInterval_tick() {
