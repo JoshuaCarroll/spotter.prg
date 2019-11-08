@@ -107,8 +107,10 @@ mysqli_close($conn);
 				if (document.getElementById("refresh").checked) {
 					location.reload();
 				}
-                if (window.location.hash == "#reload"){
-                        window.getElementById("refresh").checked=true;
+                window.onload = onPageLoad();
+
+                function onPageLoad() {
+                    document.getElementById("refresh").checked = true;
                 }
 			}
 		</script>
