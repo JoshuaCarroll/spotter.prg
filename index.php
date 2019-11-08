@@ -1,17 +1,19 @@
 <?php
 $query = "";
 $playerDiv = "";
+$refreshInterval = "checked";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
+$conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
 if($conn === false) {
     echo "<script type='text/javascript'>alert('Didn't connect');</script>";
 }
 else {
+	$refreshInterval = ""; // Clear this because this person is entering values
+	
 	if (!empty($_POST)) { // Checks to see if it received a form submission
 		if (($_POST["jerseyNumber"]) == "clear") {
-			mysqli_query($conn,"DROP TABLE Screen;");
-            mysqli_query($conn,"CREATE TABLE Screen(player VARCHAR(1000),team VARCHAR(1));");
+			mysqli_query($conn,"Delete * from Screen");
 		}
 		else {
 			$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
@@ -46,29 +48,23 @@ else {
                 echo "ERROR" . mysqli_error($conn) . "<br>";
             }
 			
-        } //End of _POST
-// Refresh Screen	
-        if (($_POST["refresh"]) == "refreshPage"){
-            $query = "SELECT * FROM Screen;";
-            $result = mysqli_query($conn,$query);    
-            while ($row = mysqli_fetch_assoc($result)){
-                if ($row['team']=="+"){
-                    $ourTeam = $row['player'] . $ourTeam;
-                }
-                elseif ($row['team']=="-"){
-                    $theirTeam = $row['player'] . $theirTeam;
-                }
-
-            }
         }
-    //end Data Base load
-    }
-    
+    } // no... THIS.. is the end of POST
 	
-	// add ck box lable refresh on by default in JS below ck box set timeout 3sec  windows.set.timeout if ck box check  then windows refresh
-    
-    
-    
+	// Initialize the variables
+    $ourTeam = "";
+	$theirTeam = "";
+	
+	$query = "SELECT * FROM Screen;";
+	$result = mysqli_query($conn,$query);    
+	while ($row = mysqli_fetch_assoc($result)) {
+		if ($row['team']=="+") {
+			$ourTeam = $ourTeam . $row['player'];  // Add the lastest to the END, not the beginning
+		}
+		elseif ($row['team']=="-") {
+			$theirTeam = $theirTeam . $row['player'];
+		}
+	}
 
 	mysqli_close($conn);
 }
@@ -97,8 +93,6 @@ else {
                     event.preventDefault();
 				}
 			}
-			
-
 		</script>
         
     </head>
@@ -107,22 +101,19 @@ else {
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" />
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
-            <input type="checkbox" name="refresh" id="refresh" value = "refreshPage" checked />
+			<label for="refresh">Auto refresh</label><input type="checkbox" name="refresh" id="refresh" <?= $refreshInterval ?> />
         </form>
         
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
             
-            document.getElementById("refresh").value = "";
-            if (document.getElementById("refresh").checked = true) {
-                
-                var myVar = setInterval(myTimer, 3000);
-                function myTimer() {
-                    document.getElementById("refresh").value = "refreshPage";
-                    form1.submit();
-                }
-                
-            }
+            var refreshInterval = setInterval(refreshInterval_tick, 3000);
+			
+			function refreshInterval_tick() {
+				if (document.getElementById("refresh").checked) {
+					location.reload();
+				}
+			}
 		</script>
 	</body>
 
