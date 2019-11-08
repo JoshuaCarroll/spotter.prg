@@ -3,7 +3,7 @@ $query = "";
 $playerDiv = "";
  $refreshInterval = "checked";
 // Create connection
-$boxChecked = "true";
+
 $conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 if ($conn == false){echo "error loading db";}
 if (!empty($_POST)) { // Checks to see if it received a form submission
