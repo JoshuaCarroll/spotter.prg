@@ -34,7 +34,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		$name = $row[1];
         echo $name;
 		$position = $row[2];}
-        else{echo "ERROR".mysqli_error(results);}
+        else{echo "ERROR".mysqli_error($results);}
 
 		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
