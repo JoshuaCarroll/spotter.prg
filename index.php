@@ -38,10 +38,8 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
 
-		mysqli_query($conn,$query);  // Let this show the error
-		//if((mysqli_query($conn,$query))==false) {
-		//	echo "ERROR" . mysqli_error($conn) . "<br>";
-		//}
+		mysqli_query($conn,$query);  
+        document.getElementById("refresh").checked = false;
 	}
 } // no... THIS.. is the end of POST
 
@@ -86,7 +84,7 @@ mysqli_close($conn);
                     console.log(key);
                     event.preventDefault();
 				}
-                document.getElementById("refresh").checked = false;
+                
 			}
 		</script>
         
@@ -97,12 +95,12 @@ mysqli_close($conn);
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
 			<label for="refresh">Auto refresh</label>
-            <input type="checkbox" name="refresh" id="refresh" checked />
+            <input type="checkbox" name="refresh" id="refresh" />
         </form>
         
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
-            
+            document.getElementById("refresh").checked = true;
             var refreshInterval = setInterval(refreshInterval_tick, 3000);
 			
 			function refreshInterval_tick() {
