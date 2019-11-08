@@ -38,12 +38,13 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 				$position = $row[2];
 		}
 
-		$playerDiv = "<div class=\'player\'><span class=\'jerseyNumber\'>" . $jerseyNumber . "</span> <span class=\'name\'>" . $name . "</span> <span class=\'position\'>" . $position . "</span></div>";
+		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
 		$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
 
-		if((mysqli_query($conn,$query))==false) {
-			echo "ERROR" . mysqli_error($conn) . "<br>";
-		}
+		mysqli_query($conn,$query));  // Let this show the error
+		//if((mysqli_query($conn,$query))==false) {
+		//	echo "ERROR" . mysqli_error($conn) . "<br>";
+		//}
 	}
 } // no... THIS.. is the end of POST
 
