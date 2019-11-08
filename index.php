@@ -4,7 +4,7 @@ $playerDiv = "";
  $refreshInterval = "checked";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
+$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 
 if (!empty($_POST)) { // Checks to see if it received a form submission
     $refreshInterval = ""; // Clear this because this person is entering values
