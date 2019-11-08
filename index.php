@@ -39,9 +39,9 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
 
 		mysqli_query($conn,$query);  
-        
+        $boxChecked = false;
 	}
-    $boxChecked = false;
+    
 } // no... THIS.. is the end of POST
 
 // Initialize the variables
