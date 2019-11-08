@@ -41,6 +41,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		mysqli_query($conn,$query);  
         
 	}
+    $boxChecked = false;
 } // no... THIS.. is the end of POST
 
 // Initialize the variables
@@ -95,23 +96,20 @@ mysqli_close($conn);
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
 			<label for="refresh">Auto refresh</label>
-            <input type="checkbox" name="refresh" id="refresh" />
+            <input type="checkbox" name="refresh" id="refresh" checked />
         </form>
         
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
-            
+             
             var refreshInterval = setInterval(refreshInterval_tick, 3000);
-			
-			function refreshInterval_tick() {
-				if (document.getElementById("refresh").checked) {
-					location.reload();
-                    window.onload = onPageLoad();
-
-                    function onPageLoad() {
-                        document.getElementById("refresh").checked = true;
+			if ($boxChecked=true) {
+                function refreshInterval_tick() {
+                    if (document.getElementById("refresh").checked) {
+                        location.reload();
+                        $boxChecked = true;
                     }
-				}
+                }
 			}
 		</script>
 	</body>
