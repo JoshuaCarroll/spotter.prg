@@ -25,10 +25,9 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		}
 		
 		$query = "SELECT * FROM $playerTable WHERE Number=$jerseyNumber;";
-        echo $query;
 		$results = mysqli_query($conn,$query);
 		// create an array of the data for player $jerseyNumber
-        echo "1";
+        if ($results == false) {echo mysqli_error_list;}
 		$row = mysqli_fetch_array($results,MYSQLI_NUM);
 		//Read the name and position
         echo "2";    
