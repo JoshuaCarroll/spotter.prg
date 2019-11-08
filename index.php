@@ -15,7 +15,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 	else {
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
-        echo "it here";
+        
 		$playerTable = "";
 		if ($lastCharacter == "+") { // Test for Bruin
 			$playerTable = "BRoster";
@@ -23,7 +23,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		else {
 			$playerTable = "ORoster";
 		}
-		
+		echo "it here". $playerTable;
 		$query = "SELECT * FROM " . $playerTable . " WHERE Number='" . $jerseyNumber . "'";
         
 		$results = mysqli_query($conn,$query);
