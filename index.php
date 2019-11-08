@@ -106,12 +106,12 @@ mysqli_close($conn);
 			function refreshInterval_tick() {
 				if (document.getElementById("refresh").checked) {
 					location.reload();
-				}
-                window.onload = onPageLoad();
+                    window.onload = onPageLoad();
 
-                function onPageLoad() {
-                    document.getElementById("refresh").checked = true;
-                }
+                    function onPageLoad() {
+                        document.getElementById("refresh").checked = true;
+                    }
+				}
 			}
 		</script>
 	</body>
