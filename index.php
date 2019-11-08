@@ -106,6 +106,7 @@ mysqli_close($conn);
 			function refreshInterval_tick() {
 				if (document.getElementById("refresh").checked) {
 					location.reload();
+                    document.getElementById("refresh").checked = true;
 				}
 			}
 		</script>
