@@ -28,11 +28,11 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
         
 		$results = mysqli_query($conn,$query);
 		// create an array of the data for player $jerseyNumber
-		$row = mysqli_fetch_array($results);
+		$row = mysqli_fetch_array($results,MYSQLI_NUM);
 		//Read the name and position
-		$name = $row[Name];
+		$name = $row[1];
         echo $name;
-		$position = $row[Position];
+		$position = $row[2];
 
 		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
