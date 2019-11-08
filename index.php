@@ -24,7 +24,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 			$playerTable = "ORoster";
 		}
 		
-		$query = "SELECT player,team FROM BRoster WHERE Number=$jerseyNumber;";
+		$query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
         echo $query;
 		$results = mysqli_query($conn,$query);
 		// create an array of the data for player $jerseyNumber
