@@ -95,7 +95,7 @@ mysqli_close($conn);
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
 			<label for="refresh">Auto refresh</label>
-            <input type="checkbox" name="refresh" id="refresh" checked />
+            <input type="checkbox" name="refresh" id="refresh" />
         </form>
         
 		<script type="text/javascript">
