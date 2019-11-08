@@ -30,6 +30,7 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		$row = mysqli_fetch_array($results,MYSQLI_NUM);
 		//Read the name and position
 		$name = $row[1];
+        echo $name;
 		$position = $row[2];
 
 		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
