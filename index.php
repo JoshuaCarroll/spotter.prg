@@ -7,52 +7,51 @@ $refreshInterval = "checked";
 $conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
 
 if (!empty($_POST)) { // Checks to see if it received a form submission
-	$refreshInterval = ""; // Clear this because this person is entering values
-
 	if (($_POST["jerseyNumber"]) == "clear") {
 		mysqli_query($conn,"Delete * from Screen");
+		$refreshInterval = ""; // Clear this because this person is entering values
 	}
 	else {
+		$refreshInterval = ""; // Clear this because this person is entering values
+		
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
 
-	if ($lastCharacter == "+") { // Test for Bruin
-			// call the data for $jerseyNumber
-			$query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
-			$results = mysqli_query($conn,$query);
-			// create an array of the data for player $jerseyNumber
-			$row=mysqli_fetch_array($results,MYSQLI_NUM);
-			//Read the name and position
-			$name = $row[1];
-			$position = $row[2];
+		if ($lastCharacter == "+") { // Test for Bruin
+				// call the data for $jerseyNumber
+				$query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
+				$results = mysqli_query($conn,$query);
+				// create an array of the data for player $jerseyNumber
+				$row=mysqli_fetch_array($results,MYSQLI_NUM);
+				//Read the name and position
+				$name = $row[1];
+				$position = $row[2];
 		}
-	if ($lastCharacter == "-") { // test for Opposition
-			// call the data for $jerseyNumber
-			$query = "SELECT * FROM ORoster WHERE Number=$jerseyNumber;";
-			$results = mysqli_query($conn,$query);
-			// create an array of the data for player $jerseyNumber
-			$row=mysqli_fetch_array($results,MYSQLI_NUM);
-			//Read the name and position
-			$name = $row[1];
-			$position = $row[2];
+		if ($lastCharacter == "-") { // test for Opposition
+				// call the data for $jerseyNumber
+				$query = "SELECT * FROM ORoster WHERE Number=$jerseyNumber;";
+				$results = mysqli_query($conn,$query);
+				// create an array of the data for player $jerseyNumber
+				$row=mysqli_fetch_array($results,MYSQLI_NUM);
+				//Read the name and position
+				$name = $row[1];
+				$position = $row[2];
 		}
 
 		$playerDiv = "<div class=\'player\'><span class=\'jerseyNumber\'>" . $jerseyNumber . "</span> <span class=\'name\'>" . $name . "</span> <span class=\'position\'>" . $position . "</span></div>";
-    $query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
+		$query = "INSERT INTO `Screen` (`player`, `team`) VALUES ('$playerDiv', '$lastCharacter') ;";
 
-    if((mysqli_query($conn,$query))==false)
-    {
-	echo "ERROR" . mysqli_error($conn) . "<br>";
-    }
-
-}
+		if((mysqli_query($conn,$query))==false) {
+			echo "ERROR" . mysqli_error($conn) . "<br>";
+		}
+	}
 } // no... THIS.. is the end of POST
 
 // Initialize the variables
 $ourTeam = "";
 $theirTeam = "";
 
-$query = "SELECT * FROM Screen;";
+$query = "SELECT * FROM Screen";
 $result = mysqli_query($conn,$query);    
 while ($row = mysqli_fetch_assoc($result)) {
 	if ($row['team']=="+") {
@@ -75,12 +74,12 @@ mysqli_close($conn);
 		<script type="text/javascript">
 			function num_keyup() {
                 var key = event.keyCode;
-                if ((key == 107) || (key == 109)) { // Plus or minus on keypad
+                if ((key == 107) || (key == 109) || (key == 189) || (key == 187)) { // Plus or minus
                     form1.submit();
                     event.preventDefault();
                 }
-				else if (key == 13) { //Carriage return, send command to clear database
-					document.getElementById('jerseyNumber').value="clear";
+		else if (key == 13) { //Carriage return, send command to clear database
+		document.getElementById('jerseyNumber').value="clear";
                     form1.submit();
                     event.preventDefault();
                 }
