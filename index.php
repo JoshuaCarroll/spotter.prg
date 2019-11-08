@@ -9,7 +9,7 @@ $conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
 if (!empty($_POST)) { // Checks to see if it received a form submission
     $refreshInterval = ""; // Clear this because this person is entering values
 	if (($_POST["jerseyNumber"]) == "clear") {
-		mysqli_query($conn,"DROP * FROM Screen");
+		mysqli_query($conn,"DELETE FROM Screen");
 		
 	}
 	else {
