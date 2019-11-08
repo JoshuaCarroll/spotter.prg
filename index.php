@@ -17,26 +17,21 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
 
+		$playerTable = "";
 		if ($lastCharacter == "+") { // Test for Bruin
-				// call the data for $jerseyNumber
-				$query = "SELECT * FROM BRoster WHERE Number=$jerseyNumber;";
-				$results = mysqli_query($conn,$query);
-				// create an array of the data for player $jerseyNumber
-				$row=mysqli_fetch_array($results,MYSQLI_NUM);
-				//Read the name and position
-				$name = $row[1];
-				$position = $row[2];
+			$playerTable = "BRoster";
 		}
-		if ($lastCharacter == "-") { // test for Opposition
-				// call the data for $jerseyNumber
-				$query = "SELECT * FROM ORoster WHERE Number=$jerseyNumber;";
-				$results = mysqli_query($conn,$query);
-				// create an array of the data for player $jerseyNumber
-				$row=mysqli_fetch_array($results,MYSQLI_NUM);
-				//Read the name and position
-				$name = $row[1];
-				$position = $row[2];
+		else {
+			$playerTable = "ORoster";
 		}
+		
+		$query = "SELECT * FROM " . $playerTable . " WHERE Number='" . $jerseyNumber . "'";
+		$results = mysqli_query($conn,$query);
+		// create an array of the data for player $jerseyNumber
+		$row = mysqli_fetch_array($results,MYSQLI_NUM);
+		//Read the name and position
+		$name = $row[1];
+		$position = $row[2];
 
 		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
