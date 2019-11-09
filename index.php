@@ -1,7 +1,7 @@
 <?php
 $query = "";
 $playerDiv = "";
- $refreshInterval = "checked";
+$refreshInterval = "checked";
 // Create connection
 $conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 if ($conn == false){echo "error loading db";}
@@ -96,12 +96,12 @@ mysqli_close($conn);
              
             var refreshInterval = setInterval(refreshInterval_tick, 3000);
 			
-                function refreshInterval_tick() {
-                    if (document.getElementById("refresh").checked) {
-                        location.refresh();
-                        
-                    }
+            function refreshInterval_tick() {
+                if (document.getElementById("refresh").checked) {
+                    location.reload();
+
                 }
+            }
 			
 		</script>
 	</body>
