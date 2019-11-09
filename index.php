@@ -4,7 +4,7 @@ $message = "Didn't Connect";
 $message2 = "Connected";
 // Create connection
 
-$conn = mysqli_connect("localhost", "root", "21802Ghc<", "SpotterDB");
+$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 if($conn === false){
     echo "<script type='text/javascript'>alert('$message');</script>";}
 	if (!empty($_POST)) { // Checks to see if it received a form submission
