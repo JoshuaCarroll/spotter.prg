@@ -3,19 +3,16 @@ $query = "";
 $playerDiv = "";
  $refreshInterval = "checked";
 // Create connection
-$boxChecked = true;
 $conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 if ($conn == false){echo "error loading db";}
 if (!empty($_POST)) { // Checks to see if it received a form submission
     $refreshInterval = ""; // Clear this because this person is entering values
 	if (($_POST["jerseyNumber"]) == "clear") {
 		mysqli_query($conn,"DELETE FROM Screen");
-		
 	}
 	else {
 		$jerseyNumber = substr_replace($_POST["jerseyNumber"],"",-1);
 		$lastCharacter = substr($_POST["jerseyNumber"], -1);
-        
 		$playerTable = "";
 		if ($lastCharacter == "+") { // Test for Bruin
 			$playerTable = "BRoster";
@@ -23,26 +20,19 @@ if (!empty($_POST)) { // Checks to see if it received a form submission
 		else {
 			$playerTable = "ORoster";
 		}
-		
 		$query = "SELECT * FROM $playerTable WHERE Number=$jerseyNumber;";
 		$results = mysqli_query($conn,$query);
 		// create an array of the data for player $jerseyNumber
         if ($results == false) {echo (mysqli_error_list($conn));}
 		$row = mysqli_fetch_array($results,MYSQLI_NUM);
 		//Read the name and position
-        
 		$name = $row[1];
-        
 		$position = $row[2];
-
 		$playerDiv = '<div class="player"><span class="jerseyNumber">' . $jerseyNumber . '</span> <span class="name">' . $name . '</span> <span class="position">' . $position . '</span></div>';
 		$query = "INSERT INTO Screen (player, team) VALUES ('" . $playerDiv . "', '" . $lastCharacter . "') ;";
-
 		mysqli_query($conn,$query);  
-        
 	}
-    $boxChecked = false;
-} // no... THIS.. is the end of POST
+} // end of POST
 
 // Initialize the variables
 $ourTeam = "";
@@ -50,16 +40,16 @@ $theirTeam = "";
 
 $query = "SELECT * FROM Screen";
 $result = mysqli_query($conn,$query);    
-
+//build the array
 while ($row = mysqli_fetch_assoc($result)) {
 	if ($row['team']=="+") {
-		$ourTeam = $ourTeam . $row['player'];  // Add the lastest to the END, not the beginning
+		$ourTeam = $ourTeam . $row['player'];  
 	}
 	elseif ($row['team']=="-") {
 		$theirTeam = $theirTeam . $row['player'];
 	}
 }
-
+// Close the DB connection
 mysqli_close($conn);
 ?>
 
@@ -70,9 +60,10 @@ mysqli_close($conn);
         <meta charset="UTF-8">
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<script type="text/javascript">
+            //check for key entry
 			function num_keyup() {
                 var key = event.keyCode;
-                if ((key == 107) || (key == 109) || (key == 189) || (key == 187)) { // Plus or minus
+                if ((key == 107) || (key == 109) || (key == 189) || (key == 187)) { // Plus or minus on numeric pad and Mac
                     form1.submit();
                     event.preventDefault();
                 }
@@ -90,15 +81,16 @@ mysqli_close($conn);
 		</script>
         
     </head>
+    <!-- Build the basic page -->
     <body id="element">
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return false;" >
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" />
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
 			<label for="refresh">Auto refresh</label>
-            <input type="checkbox" name="refresh" id="refresh" checked />
+            <input type="checkbox" name="refresh" id="refresh" <?php echo $refreshInterval ?> />
         </form>
-        
+        <!--  -->
 		<script type="text/javascript">
 			document.getElementById("jerseyNumber").focus();
              
