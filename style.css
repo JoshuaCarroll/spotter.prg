@@ -1,6 +1,6 @@
-html, body {
-    cursor: none;
-}
+#lblRefresh {
+    font-size:0.5em;
+} 
 
 body {
 	background: #000000;

@@ -87,7 +87,7 @@ mysqli_close($conn);
 			<input type="text" name="jerseyNumber" id="jerseyNumber" onkeyup="num_keyup()" />
 			<div id="ourTeam"><?= $ourTeam ?></div>
 			<div id="theirTeam"><?= $theirTeam ?></div>
-			<label for="refresh">Auto refresh</label>
+			<label for="refresh" id="lblRefresh">Auto refresh</label>
             <input type="checkbox" name="refresh" id="refresh" <?php echo $refreshInterval ?> />
         </form>
         <!--  -->
