@@ -14,8 +14,8 @@ if (!empty($_POST["url"])) {
         }
 	   
 	}
-	$output = $output . "(null,null,null);";//what is this for?
-	echo $output;
+	$output = $output . "(null,null,null);";
+	
 	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 	mysqli_query($conn, "DELETE FROM $table;");
     if (mysqli_query($conn, $output) == false) {echo (mysqli_error($conn));}
@@ -29,7 +29,7 @@ if (!empty($_POST["url"])) {
         <title>Football Spotter Update</title>
         <meta charset="UTF-8">    
 		<script>
-			function radBruins_selected() {
+			function radBruins_clicked() {
 				document.getElementById("url").value = "https://www.maxpreps.com/high-schools/pulaski-academy-bruins-(little-rock,ar)/football/roster.htm";
 			}
 		</script>
@@ -38,9 +38,9 @@ if (!empty($_POST["url"])) {
     <body>
     	<form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 			Update which team:
-			<label for="radBruins">Bruins</label><input type="radio" name="team" id="radBruins" value="BRoster" onselect="radBruins_selected()"> 
+			<label for="radBruins">Bruins</label><input type="radio" name="team" id="radBruins" value="BRoster" onclick="radBruins_clicked()"> 
 			<label for="radOpp">Opponent</label><input type="radio" name="team" id="radOpp" value="ORoster" checked="checked"><br>
-			<label for="url">Maxpreps roster URL: </label><input type="text" name="url" id="url" /><br>
+			<label for="url">Maxpreps roster URL: </label><input type="text" name="url" id="url" style="width: 200px;" /><br>
 			<input type="submit" value="Submit" />
         </form>
 	</body>
