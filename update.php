@@ -2,7 +2,7 @@
 
 if (!empty($_POST["url"])) {
 	$table = $_POST["team"];
-	$url = $_POST["url"]; // path to the JSON file
+	$url = "https://wt-90a32ef8ce619cb1158f5b6850fb1f12-0.sandbox.auth0-extend.com/maxprepsTeamScraper?url=" . $_POST["url"]; // path to the JSON file
 	$data = file_get_contents($url);  // load contents of the page 
 	$roster = json_decode($data, true); // parse the JSON into an object
 	$output = "INSERT INTO " . $table . " (number, name, position) VALUES ";
