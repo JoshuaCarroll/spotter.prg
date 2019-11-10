@@ -10,7 +10,6 @@ if (!empty($_POST["url"])) {
 	
 	foreach ($roster as $player) {
         if ($player[jersey]){
-            str_replace("'"," ",$player[name]);
             $output = $output . "('$player[jersey]','$player[name]',' $player[position]'),";
         }
 	   
