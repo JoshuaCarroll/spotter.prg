@@ -2,9 +2,11 @@
 
 if (!empty($_POST["url"])) {
 	$table = $_POST["team"];
-	$roster = json_decode($data, true);
-
+	$url = $_POST["url"]; // path to the JSON file
+	$data = file_get_contents($url);  // load contents of the page 
+	$roster = json_decode($data, true); // parse the JSON into an object
 	$output = "INSERT INTO " . $table . " (number, name, position) VALUES ";
+	
 	foreach ($roster as $player) {
 		$output = $output . "('". $player['jersey'] . "','" . $player['name'] . "','" . $player['position'] . "'),";
 	}
@@ -12,7 +14,7 @@ if (!empty($_POST["url"])) {
 	
 	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 	mysqli_query($conn, "DELETE * FROM " . $table . ";");
-	mysqli_query($conn, $output);
+	mysqli_query($conn, $output); // Execute the insert statement
 	mysqli_close($conn);
 }
 
