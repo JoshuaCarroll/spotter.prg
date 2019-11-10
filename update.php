@@ -14,10 +14,11 @@ if (!empty($_POST["url"])) {
         }
 	   
     }
+    $output = substr_replace($output,"",-1);
 	$output = $output . ";";
 	echo $output;
 	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
-	mysqli_query($conn, "DELETE * FROM $table ;");
+	mysqli_query($conn, "DELETE FROM $table;");
 	mysqli_query($conn, $output); // Execute the insert statement
 	mysqli_close($conn);
 }
