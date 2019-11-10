@@ -6,15 +6,15 @@ if (!empty($_POST["url"])) {
 	$data = file_get_contents($url);  // load contents of the page 
 	$roster = json_decode($data, true); // parse the JSON into an object
 	
-    $outputPreamble = "INSERT INTO $table (Number, Name, Position) VALUES ";
-	$output = "";
+    $output = "INSERT INTO $table (Number, Name, Position) VALUES ";
+	
 	foreach ($roster as $player) {
         if ($player[jersey]){ 
-            $output = $output . $outputPreamble . "('$player[jersey]','$player[name]',' $player[position]');";
+            $output = $output . "('$player[jersey]','$player[name]',' $player[position]'),";
         }
 	   
     }
-	//$output = $output . "('','','');";
+	$output = $output . ";";
 	echo $output;
 	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 	mysqli_query($conn, "DELETE * FROM $table ;");
