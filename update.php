@@ -14,7 +14,7 @@ if (!empty($_POST["url"])) {
         }
 	   
 	}
-	$output = $output . "('','','');";
+	$output = $output . "(null,null,null);";//what is this for?
 	echo $output;
 	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 	mysqli_query($conn, "DELETE FROM $table;");
