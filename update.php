@@ -6,10 +6,10 @@ if (!empty($_POST["url"])) {
 	$data = file_get_contents($url);  // load contents of the page 
 	$roster = json_decode($data, true); // parse the JSON into an object
 	
-    $output = "INSERT INTO " . $table . " (number, name, position) VALUES ";
+    $output1 = "INSERT INTO $table (Number, Name, Position) VALUES ";
 	
 	foreach ($roster as $player) {
-		$output = $output . "('". $player['jersey'] . "','" . $player['name'] . "','" . $player['position'] . "'),";
+		$output = $output1 . "('$player[jersey]','$player[name]',' $player[position]');";
 	   echo $output;
     }
 	$output = $output . "('','','');";
