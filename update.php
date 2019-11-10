@@ -9,8 +9,10 @@ if (!empty($_POST["url"])) {
     $output1 = "INSERT INTO $table (Number, Name, Position) VALUES ";
 	
 	foreach ($roster as $player) {
-		$output = $output1 . "('$player[jersey]','$player[name]',' $player[position]');";
-	   echo $output;
+        if ($player[jersey] !== "" || $player[name] !== "name" ){ 
+            $output = $output1 . "('$player[jersey]','$player[name]',' $player[position]');";
+        }
+	   echo $output . "<br>";
     }
 	$output = $output . "('','','');";
 	
