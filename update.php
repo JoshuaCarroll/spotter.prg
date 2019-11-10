@@ -10,12 +10,11 @@ if (!empty($_POST["url"])) {
 	
 	foreach ($roster as $player) {
         if ($player[jersey]){
-            $output = $output . "('$player[jersey]','$player[name]',' $player[position]'),";
+            $output = $output . "('" . $player[jersey] . "','" . $player[name] . "','" . $player[position] . "'), ";
         }
 	   
-    }
-    $output = substr_replace($output,"",-1);
-	$output = $output . ";";
+	}
+	$output = $output . "('','','');";
 	echo $output;
 	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 	mysqli_query($conn, "DELETE FROM $table;");
