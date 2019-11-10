@@ -9,7 +9,7 @@ if (!empty($_POST["url"])) {
     $output = "INSERT INTO $table (Number, Name, Position) VALUES ";
 	
 	foreach ($roster as $player) {
-        if ($player[jersey] == false){ 
+        if ($player[jersey]){ 
             $output = $output . "('$player[jersey]','$player[name]',' $player[position]');";
         }
 	   
