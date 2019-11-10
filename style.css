@@ -1,16 +1,21 @@
+#lblRefresh {
+    font-size:0.5em;
+} 
+
 body {
 	background: #000000;
-	color: rgba(255,255,255,0.2);
+	color: rgba(255,255,255,0.4);
 	font-family: Arial;
-	font-size: 20px;
+	font-size: 40px;
 	margin: 0;
 	padding 0;
 }
 
 input#jerseyNumber {
 	position: absolute;
-	top: 320px;
+	bottom: 20px;
 	background-color: #222;
+    color: #ddd;
 	border-style: none;
 }
 #ourTeam:empty, #theirTeam:empty {
@@ -40,14 +45,14 @@ input#jerseyNumber {
 
 .player .jerseyNumber {
 	font-size: 0.5em;
-	color: #888;
+	color: #bbb;
 }
 
 .player .name {
-	color: #fff;
+	color: rgba(255,255,255,1);
 }
 
 .player .position {
 	font-size: 0.5em;
-	color: #888;
+	color: #bbb;
 }
