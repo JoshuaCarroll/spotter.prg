@@ -19,7 +19,7 @@ if (!empty($_POST["url"])) {
 	echo $output;
 	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
 	mysqli_query($conn, "DELETE FROM $table;");
-    if (mysqli_query($conn, $output) == false) {echo (mysqli_error_list($conn));}
+    if (mysqli_query($conn, $output) == false) {echo (mysqli_error($conn));}
 	 // Execute the insert statement
 	mysqli_close($conn);
 }
