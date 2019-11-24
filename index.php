@@ -25,8 +25,8 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
 else {echo "ERROR";}
 fclose($handle);
 
-echo $host_name . $database . $user_name . $password;
-    $host_name = 'db5000222557.hosting-data.io';
+echo $host_name;
+ //   $host_name = 'db5000222557.hosting-data.io';
     $database = 'dbs217277';
     $user_name = 'dbu341512';
     $password = '1234Passw0rd?';
