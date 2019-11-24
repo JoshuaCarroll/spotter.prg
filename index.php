@@ -29,7 +29,7 @@ fclose($handle);
 
 
     $host_name = 'db5000222557.hosting-data.io';
-//    $database = 'dbs217277';
+    $database = 'dbs217277';
     $user_name = 'dbu341512';
     $password = '1234Passw0rd?';
     $conn = mysqli_connect($host_name, $user_name, $password, $database);
