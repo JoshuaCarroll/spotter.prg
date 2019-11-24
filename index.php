@@ -8,11 +8,18 @@ $row = 1;
 if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);
-        echo "<p> $num fields in line $row: <br /></p>\n";
+        //echo "<p> $num fields in line $row: <br /></p>\n";
         $row++;
-        for ($c=0; $c < $num; $c++) {
-            echo $data[$c] . "<br />\n";
-        } 
+        if ($row = 2) {
+            $host_name = $data[0];
+            $database = $data[1];
+            $yser_name = $data[2];
+            $password = $data[3];
+            
+        }
+        //for ($c=0; $c < $num; $c++) {
+            //echo $data[$c] . "<br />\n";
+        //} 
     } 
     
 } 
@@ -20,10 +27,10 @@ else {echo "ERROR";}
 fclose($handle);
 
 
-    $host_name = 'db5000222557.hosting-data.io';
-    $database = 'dbs217277';
-    $user_name = 'dbu341512';
-    $password = '1234Passw0rd?';
+//    $host_name = 'db5000222557.hosting-data.io';
+//    $database = 'dbs217277';
+//    $user_name = 'dbu341512';
+//    $password = '1234Passw0rd?';
     $conn = mysqli_connect($host_name, $user_name, $password, $database);
 
     if (mysqli_connect_errno()) {
