@@ -3,6 +3,22 @@ $query = "";
 $playerDiv = "";
 $refreshInterval = "checked";
 // Create connection
+
+$row = 1;
+if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $num = count($data);
+        echo "<p> $num fields in line $row: <br /></p>\n";
+        $row++;
+        for ($c=0; $c < $num; $c++) {
+            echo $data[$c] . "<br />\n";
+        } 
+    } 
+    
+} else {echo "ERROR";}
+fclose($handle);
+
+
     $host_name = 'db5000222557.hosting-data.io';
     $database = 'dbs217277';
     $user_name = 'dbu341512';
