@@ -6,10 +6,11 @@ $refreshInterval = "checked";
 
 $row = 0;
 if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        $num = count($data);
+    while (!feof($handle)) {
+        $data = fgetcsv($handle, 1000);
+        //$num = count($data);
         //echo "<p> $num fields in line $row: <br /></p>\n";
-        
+        echo $data[0] . data[1] . data[2] . data[3] . "<br>";
         if ($row = 1) {
             $host_name = $data[0];
             $database = $data[1];
@@ -23,9 +24,9 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
     
 } 
 
-fclose($handle);
+//fclose($handle);
 
-echo $row . "  " . $host_name . "<br>";
+//echo $row . "  " . $host_name . "<br>";
     $host_name = 'db5000222557.hosting-data.io';
     $database = 'dbs217277';
     $user_name = 'dbu341512';
