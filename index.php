@@ -17,9 +17,9 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
             $password = $data[3];
             
         }
-        //for ($c=0; $c < $num; $c++) {
-            //echo $data[$c] . "<br />\n";
-        //} 
+        for ($c=0; $c < $num; $c++) {
+            echo $data[$c] . "<br />\n";
+        } 
     } 
     
 } 
