@@ -10,7 +10,7 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
         $num = count($data);
         //echo "<p> $num fields in line $row: <br /></p>\n";
         
-        if ($row = 0) {
+        if ($row = 1) {
             $host_name = $data[0];
             $database = $data[1];
             $yser_name = $data[2];
@@ -22,10 +22,10 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
     } 
     
 } 
-else {echo "ERROR";}
+
 fclose($handle);
 
-echo $host_name;
+echo $row . "  " . $host_name . "<br>";
     $host_name = 'db5000222557.hosting-data.io';
     $database = 'dbs217277';
     $user_name = 'dbu341512';
