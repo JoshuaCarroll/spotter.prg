@@ -9,7 +9,7 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);
         //echo "<p> $num fields in line $row: <br /></p>\n";
-        $row++;
+        
         if ($row = 2) {
             $host_name = $data[0];
             $database = $data[1];
@@ -17,6 +17,7 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
             $password = $data[3];
             
         }
+        $row++;
         for ($c=0; $c < $num; $c++) {
             echo $data[$c] . "<br />\n";
         } 
