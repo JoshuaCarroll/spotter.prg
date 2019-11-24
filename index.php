@@ -4,33 +4,29 @@ $playerDiv = "";
 $refreshInterval = "checked";
 // Create connection
 
-$row = 0;
-if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
-    while (!feof($handle)) {
-        $data = fgetcsv($handle, 1000);
-        //$num = count($data);
-        //echo "<p> $num fields in line $row: <br /></p>\n";
-        echo $data[0] . data[1] . data[2] . data[3] . "<br>";
-        if ($row = 1) {
-            $host_name = $data[0];
-            $database = $data[1];
-            $yser_name = $data[2];
-            $password = $data[3];
-            
-        }
-        $row++;
-        
-    } 
-    
-} 
+function readCSV($csvFile){
+    $file_handle = fopen($csvFile, 'r');
+    while (!feof($file_handle) ) {
+        $line_of_text[] = fgetcsv($file_handle, 1024);
+    }
+    fclose($file_handle);
+    return $line_of_text;
+}
+$csvFile = '../.sec/hold';
+ 
+$csv = readCSV($csvFile);
+$host_name = $csv[1][0];
+$database = $csv[1][1];
+$$user_name = $csv[1][2];
+$password = $csv[1][3];
 
 //fclose($handle);
 
 //echo $row . "  " . $host_name . "<br>";
-    $host_name = 'db5000222557.hosting-data.io';
-    $database = 'dbs217277';
-    $user_name = 'dbu341512';
-    $password = '1234Passw0rd?';
+//    $host_name = 'db5000222557.hosting-data.io';
+//    $database = 'dbs217277';
+//    $user_name = 'dbu341512';
+//    $password = '1234Passw0rd?';
     $conn = mysqli_connect($host_name, $user_name, $password, $database);
 
     if (mysqli_connect_errno()) {
