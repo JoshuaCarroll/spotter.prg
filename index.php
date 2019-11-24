@@ -17,16 +17,10 @@ $csvFile = '../.sec/hold';
 $csv = readCSV($csvFile);
 $host_name = $csv[1][0];
 $database = $csv[1][1];
-$$user_name = $csv[1][2];
+$user_name = $csv[1][2];
 $password = $csv[1][3];
 
-//fclose($handle);
-
-//echo $row . "  " . $host_name . "<br>";
-//    $host_name = 'db5000222557.hosting-data.io';
-//    $database = 'dbs217277';
-//    $user_name = 'dbu341512';
-//    $password = '1234Passw0rd?';
+fclose($handle);
     $conn = mysqli_connect($host_name, $user_name, $password, $database);
 
     if (mysqli_connect_errno()) {
