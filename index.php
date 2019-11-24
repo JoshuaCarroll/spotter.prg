@@ -4,20 +4,20 @@ $playerDiv = "";
 $refreshInterval = "checked";
 // Create connection
 
-$row = 1;
+//$row = 1;
 if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);
         //echo "<p> $num fields in line $row: <br /></p>\n";
         
-        if ($row = 2) {
-            $host_name = $data[0];
-            $database = $data[1];
-            $yser_name = $data[2];
-            $password = $data[3];
+ //       if ($row = 2) {
+            $host_name = $data[0][1];
+            $database = $data[1][1];
+            $yser_name = $data[2][1];
+            $password = $data[3][1];
             
-        }
-        $row++;
+  //      }
+  //      $row++;
         
     } 
     
