@@ -18,16 +18,14 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
             
         }
         $row++;
-        for ($c=0; $c < $num; $c++) {
-            echo $data[$c] . "<br />\n";
-        } 
+        
     } 
     
 } 
 else {echo "ERROR";}
 fclose($handle);
 
-
+echo $host_name . $database . $user_name . $password;
     $host_name = 'db5000222557.hosting-data.io';
     $database = 'dbs217277';
     $user_name = 'dbu341512';
