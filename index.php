@@ -3,9 +3,16 @@ $query = "";
 $playerDiv = "";
 $refreshInterval = "checked";
 // Create connection
-$handle = fopen("./sec/hold", "r");
-echo $handle;
-$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
+    $host_name = 'db5000222557.hosting-data.io';
+    $database = 'dbs217277';
+    $user_name = 'dbu341512';
+    $password = '1234Passw0rd?';
+    $conn = mysqli_connect($host_name, $user_name, $password, $database);
+
+    if (mysqli_connect_errno()) {
+      die('<p>Failed to connect to MySQL: '.mysqli_connect_error().'</p>');
+    } 
+//$conn = mysqli_connect("localhost", "root", "Passw0rd?", "dbs217277");
 if ($conn == false){echo "error loading db";}
 if (!empty($_POST)) { // Checks to see if it received a form submission
     $refreshInterval = ""; // Clear this because this person is entering values
