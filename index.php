@@ -10,7 +10,7 @@ if (($handle = fopen("../.sec/hold", "r")) !== FALSE) {
         $num = count($data);
         //echo "<p> $num fields in line $row: <br /></p>\n";
         
-        if ($row = 1) {
+        if ($row = 0) {
             $host_name = $data[0];
             $database = $data[1];
             $yser_name = $data[2];
