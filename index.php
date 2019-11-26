@@ -3,7 +3,30 @@ $query = "";
 $playerDiv = "";
 $refreshInterval = "checked";
 // Create connection
-$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
+
+function readCSV($csvFile){
+    $file_handle = fopen($csvFile, 'r');
+    while (!feof($file_handle) ) {
+        $line_of_text[] = fgetcsv($file_handle, 1024);
+    }
+    fclose($file_handle);
+    return $line_of_text;
+}
+$csvFile = '../.sec/hold';
+ 
+$csv = readCSV($csvFile);
+$host_name = $csv[1][0];
+$database = $csv[1][1];
+$user_name = $csv[1][2];
+$password = $csv[1][3];
+
+fclose($handle);
+    $conn = mysqli_connect($host_name, $user_name, $password, $database);
+
+    if (mysqli_connect_errno()) {
+      die('<p>Failed to connect to MySQL: '.mysqli_connect_error().'</p>');
+    } 
+//$conn = mysqli_connect("localhost", "root", "Passw0rd?", "dbs217277");
 if ($conn == false){echo "error loading db";}
 if (!empty($_POST)) { // Checks to see if it received a form submission
     $refreshInterval = ""; // Clear this because this person is entering values

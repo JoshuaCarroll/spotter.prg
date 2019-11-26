@@ -36,13 +36,38 @@ if (!empty($_POST["url"])) {
 	   
 	}
 	$output = $output . "(null,null,null);";
-	echo "<pre>" . $output . "</pre>";
-	
-	$conn = mysqli_connect("localhost", "root", "Passw0rd", "SpotterDB");
-	mysqli_query($conn, "DELETE FROM $table;");
-    if (mysqli_query($conn, $output) == false) {echo (mysqli_error($conn));}
+//	echo "<pre>" . $output . "</pre>";
+// Open DB
+    
+    function readCSV($csvFile){
+        $file_handle = fopen($csvFile, 'r');
+        while (!feof($file_handle) ) {
+            $line_of_text[] = fgetcsv($file_handle, 1024);
+        }
+        fclose($file_handle);
+        return $line_of_text;
+    }
+    $csvFile = '../.sec/hold';
+
+    $csv = readCSV($csvFile);
+    $host_name = $csv[1][0];
+    $database = $csv[1][1];
+    $user_name = $csv[1][2];
+    $password = $csv[1][3];
+
+    fclose($handle);
+
+	$conn = mysqli_connect($host_name, $user_name, $password, $database);
+    if (mysqli_connect_errno()) {
+      die('<p>Failed to connect to MySQL: '.mysqli_connect_error().'</p>');
+    } 
+    else
+        
+	{mysqli_query($conn, "DELETE FROM $table;");
+    if (mysqli_query($conn, $output) == false) {echo "error" . (mysqli_error($conn));}
 	 // Execute the insert statement
 	mysqli_close($conn);
+    }
 }
 
 ?></p>
